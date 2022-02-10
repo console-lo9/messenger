@@ -20,7 +20,7 @@ export const removeMessage = (date) => ({ type: REMOVE_MESSAGE, date });
 
 const initialState = [];
 
-const messageReducer = (state = initialState, action) => {
+const message = (state = initialState, action) => {
     switch (action.type) {
         case FETCH:
             return (state = action.value);
@@ -44,7 +44,7 @@ export const initInput = () => ({
 
 const inputInitialState = '';
 
-const inputReducer = (state = inputInitialState, action) => {
+const input = (state = inputInitialState, action) => {
     switch (action.type) {
         case REPLY_INPUT:
             return (state = action.input);
@@ -55,7 +55,7 @@ const inputReducer = (state = inputInitialState, action) => {
     }
 };
 
-const rootReducer = combineReducers({ messageReducer, inputReducer });
+const rootReducer = combineReducers({ message, input });
 const store = createStore(rootReducer);
 
 export default store;
