@@ -1,27 +1,35 @@
+import { Message } from 'models/message';
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ADD_MESSAGE } from 'store';
 import styled from 'styled-components';
 
 const NewMessage = () => {
+    const dispatch = useDispatch();
+    const data = useSelector((state) => state);
     const [newContent, setNewContent] = useState('');
 
     const submitHandler = (event) => {
         event.preventDefault();
 
+        dispatch({
+            type: ADD_MESSAGE,
+            value: [...data, new Message(newContent)],
+        });
         if (newContent.trim().length === 0) {
             return;
         }
 
-        console.log(newContent);
         setNewContent('');
     };
 
-    const typingCheckHandler = (event) => {
+    const getCurrentHandler = (event) => {
         const typingContent = event.target.value;
 
         setNewContent(typingContent);
     };
 
-    const testHanlder = () => {
+    const typingCheckHandler = () => {
         const typingContentLength = newContent.trim().length;
         let isTyping;
 
@@ -30,12 +38,12 @@ const NewMessage = () => {
         } else if (typingContentLength === 0) {
             isTyping = false;
         }
-        console.log(isTyping);
+
         return isTyping;
     };
 
     useEffect(() => {
-        testHanlder();
+        typingCheckHandler();
     }, [newContent]);
 
     return (
@@ -45,10 +53,10 @@ const NewMessage = () => {
                 id="newMSG"
                 type="text"
                 value={newContent}
-                onChange={typingCheckHandler}
+                onChange={getCurrentHandler}
                 placeholder="Enter message"
             />
-            <SendButton type="submit" isTyping={testHanlder()}>
+            <SendButton type="submit" isTyping={typingCheckHandler()}>
                 보내기
             </SendButton>
         </form>
