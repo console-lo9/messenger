@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { getDate } from 'utils/getDate';
 
 export class Message {
     constructor(newContent) {
@@ -7,6 +8,6 @@ export class Message {
         this.userName = '피카츄';
         this.profileImage = 'https://bit.ly/3rGsJOg';
         this.content = newContent;
-        this.date = new Date().toLocaleString();
+        this.date = getDate(new Date());
     }
 }
