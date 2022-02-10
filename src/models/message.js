@@ -1,11 +1,11 @@
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 
-// export class Message {
-//     constructor({ newContent }) {
-//         userId = nanoid();
-//         userName = '피카츄';
-//         profileImage = 'https://bit.ly/3rGsJOg';
-//         content = newContent;
-//         date = new Date().toLocaleString();
-//     }
-// }
+export class Message {
+    constructor(newContent) {
+        this.userId = nanoid();
+        this.userName = '피카츄';
+        this.profileImage = 'https://bit.ly/3rGsJOg';
+        this.content = newContent;
+        this.date = new Date().toLocaleString();
+    }
+}

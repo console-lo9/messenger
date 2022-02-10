@@ -1,16 +1,61 @@
 import { nanoid } from 'nanoid';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import Message from './Message';
+import MessageRemove from './MessageRemove';
+import { replyInput } from 'store';
+import styled from 'styled-components';
 
 const Messages = () => {
-    const data = useSelector((state) => state);
+    const data = useSelector((state) => state.message);
+    const dispatch = useDispatch();
 
-    console.log(data);
+    const handleReply = (event) => {
+        const selectMessage = data.filter(
+            (item) => item.date === event.target.id
+        )[0];
+        const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
+        dispatch(replyInput(input));
+    };
+
     return (
         <ul>
             {data &&
-                data.map((item) => <li key={nanoid()}>{item.userName}</li>)}
+                data.map((item) => (
+                    <MessageDiv key={nanoid()}>
+                        <Message
+                            profileImage={item.profileImage}
+                            userName={item.userName}
+                            content={item.content}
+                            date={item.date}
+                        >
+                            {item.userName}
+                        </Message>
+                        <MessageRemove date={item.date} />
+
+                        <ReplyButton
+                            className="reply_div"
+                            onClick={handleReply}
+                            id={item.date}
+                        >
+                            답장
+                        </ReplyButton>
+                        <hr />
+                    </MessageDiv>
+                ))}
         </ul>
     );
 };
 
+const MessageDiv = styled.div`
+    &:hover {
+        .reply_div {
+            display: block;
+        }
+    }
+`;
+
+const ReplyButton = styled.button`
+    display: none;
+`;
 export default Messages;
