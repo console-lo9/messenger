@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
+import Message from './Message';
 
 const Messages = () => {
     const data = useSelector((state) => state);
@@ -8,7 +9,16 @@ const Messages = () => {
     return (
         <ul>
             {data &&
-                data.map((item) => <li key={nanoid()}>{item.userName}</li>)}
+                data.map((item) => (
+                    <Message
+                        key={nanoid()}
+                        profileImage={item.profileImage}
+                        userName={item.userName}
+                        content={item.content}
+                    >
+                        {item.userName}
+                    </Message>
+                ))}
         </ul>
     );
 };

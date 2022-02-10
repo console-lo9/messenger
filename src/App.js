@@ -1,3 +1,4 @@
+import NewMessage from 'components/NewMessage/NewMessage';
 import useFetch from 'hooks/useFetch';
 import { Fragment, useEffect } from 'react';
 import { useSelector } from 'react-redux';

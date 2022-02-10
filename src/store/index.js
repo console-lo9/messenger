@@ -23,13 +23,8 @@ const message = (state = initialState, action) => {
             return (state = action.value);
 
         case ADD_MESSAGE:
-            return state.concat({
-                userId: action.userID,
-                userName: action.userName,
-                profileImage: action.profileImage,
-                content: action.content,
-                date: new Date(),
-            });
+            return (state = action.value);
+
         default:
             return state;
     }
