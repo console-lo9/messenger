@@ -12,6 +12,7 @@ const Messages = () => {
                 data.map((item) => (
                     <Message
                         key={nanoid()}
+                        date={item.date}
                         profileImage={item.profileImage}
                         userName={item.userName}
                         content={item.content}

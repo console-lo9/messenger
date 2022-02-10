@@ -5,8 +5,13 @@ const Message = (props) => {
     return (
         <UserMsg>
             <ProfileImage src={props.profileImage} />
-            <div>{props.userName}</div>
-            <div>{props.content}</div>
+            <UserInfo>
+                <div>
+                    <span>{props.userName}</span>
+                    <span>{props.date}</span>
+                </div>
+                <div>{props.content}</div>
+            </UserInfo>
         </UserMsg>
     );
 };
@@ -20,6 +25,10 @@ const UserMsg = styled.li`
     background: rgb(248, 248, 248);
 `;
 
+const UserInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
 const ProfileImage = styled.img`
     width: 50px;
     height: 50px;

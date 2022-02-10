@@ -64,22 +64,25 @@ const UserForm = styled.form`
     margin: 20px 10px;
     position: relative;
     display: flex;
-    width: 80%;
-
+    width: 70%;
+    align-items: center;
     border: 1px solid #e6e6e8;
     border-radius: 2px;
     background-color: #fff;
 `;
 
 const UserInput = styled.input`
+    padding-left: 10px;
+    width: 91%;
     height: 50px;
     border: none;
 `;
 
 const SendButton = styled.button`
+    top: 10px;
     weight: 36px;
     height: 36px;
-    padding: 0;
+    padding: 2px;
     border: 0;
     border-radius: 2px;
     background-color: ${(props) => (props.isTyping ? '#478bff' : '#e6e6e8')};
