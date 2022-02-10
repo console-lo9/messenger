@@ -7,18 +7,19 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
     const dispatch = useDispatch();
-    const state = useSelector((state) => state);
+    const state = useSelector((state) => state.message);
 
     const fetchData = useFetch('http://localhost:4000/messages');
 
     useEffect(() => {
-        dispatch({
-            type: FETCH,
-            value: fetchData,
-        });
+        if (fetchData) {
+            dispatch({
+                type: FETCH,
+                value: fetchData,
+            });
+        }
     }, [fetchData]);
 
-    console.log(state, 'state');
     if (!state) return <div>로딩중</div>;
     return (
         <Fragment>

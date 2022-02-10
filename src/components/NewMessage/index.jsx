@@ -1,7 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { INIT_INPUT } from 'store';
 import styled from 'styled-components';
 
 const NewMessage = () => {
+    const input = useSelector((state) => state.input);
+    const dispatch = useDispatch();
+
     const [newContent, setNewContent] = useState('');
 
     const submitHandler = (event) => {
@@ -13,6 +19,7 @@ const NewMessage = () => {
 
         console.log(newContent);
         setNewContent('');
+        dispatch({ type: INIT_INPUT });
     };
 
     const typingCheckHandler = (event) => {
@@ -30,13 +37,15 @@ const NewMessage = () => {
         } else if (typingContentLength === 0) {
             isTyping = false;
         }
-        console.log(isTyping);
         return isTyping;
     };
 
     useEffect(() => {
         testHanlder();
-    }, [newContent]);
+        if (input !== '') {
+            setNewContent(input);
+        }
+    }, [newContent, input]);
 
     return (
         <form onSubmit={submitHandler}>
