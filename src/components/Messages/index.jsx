@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
-import { useDispatch, useSelector } from 'react-redux';
 
+import { useDispatch, useSelector } from 'react-redux';
 import Message from './Message';
 import MessageRemove from './MessageRemove';
 import { replyInput } from 'store';
@@ -47,6 +47,7 @@ const Messages = () => {
     );
 };
 
+
 const MessageDiv = styled.div`
     &:hover {
         .reply_div {
@@ -54,6 +55,7 @@ const MessageDiv = styled.div`
         }
     }
 `;
+
 const StyledMessages = styled.ul`
     width: 80%;
     height: 80%;
