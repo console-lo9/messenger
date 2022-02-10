@@ -14,13 +14,14 @@ const Messages = () => {
                 data.map((item) => (
                     <MessageDiv key={nanoid()}>
                         <Message
+                            date={item.date}
                             profileImage={item.profileImage}
                             userName={item.userName}
                             content={item.content}
                         >
                             {item.userName}
                         </Message>
-                        <MessageRemove date={item.date} />
+                        <MessageRemove commentId={item.commentId} />
                     </MessageDiv>
                 ))}
         </StyledMessages>
