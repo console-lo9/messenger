@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ADD_MESSAGE, INIT_INPUT } from 'store';
 import styled from 'styled-components';
 
-const NewMessage = () => {
+const NewMessage = (props) => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
     const input = useSelector((state) => state.input);
     const [newContent, setNewContent] = useState('');
-    const [scrollHeight, setScrollHeight] = useState('');
+    const [scrollHeight, setScrollHeight] = useState(48);
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -25,6 +25,13 @@ const NewMessage = () => {
 
         setNewContent('');
         dispatch({ type: INIT_INPUT });
+
+        //  submit하면 textarea 길이 초기화
+        setScrollHeight(0);
+        // submit하면 가장 아래로 스크롤
+        props.MsgBox.current.scrollTo({
+            top: props.MsgBox.current.scrollHeight,
+        });
     };
 
     const getCurrentHandler = (event) => {
@@ -48,6 +55,25 @@ const NewMessage = () => {
         return isTyping;
     };
 
+    const keyDownHandler = (event) => {
+        const typingContentLength = newContent.trim().length;
+        if (typingContentLength === 0) return;
+        const targetKey = event.keyCode;
+        if (targetKey === 13 && !event.shiftKey) {
+            dispatch({
+                type: ADD_MESSAGE,
+                value: [...data, new Message(newContent)],
+            });
+            setNewContent('');
+            dispatch({ type: INIT_INPUT });
+            setScrollHeight(0);
+
+            props.MsgBox.current.scrollTo({
+                top: props.MsgBox.current.scrollHeight,
+            });
+        }
+    };
+
     useEffect(() => {
         if (input !== '') {
             setNewContent(input);
@@ -55,65 +81,80 @@ const NewMessage = () => {
     }, [input]);
     console.log(scrollHeight);
     return (
-        <UserForm onSubmit={submitHandler}>
-            <label htmlFor="newMSG"></label>
-            <UserInput
-                id="newMSG"
-                type="text"
-                value={newContent}
-                onChange={getCurrentHandler}
-                placeholder="Enter message"
-                scrollHeight={scrollHeight}
-            />
-            <SendButton type="submit" isTyping={typingCheckHandler()}>
-                보내기
-            </SendButton>
-        </UserForm>
+        <UserFormBox>
+            <UserForm onSubmit={submitHandler}>
+                <label htmlFor="newMSG"></label>
+                <UserInput
+                    id="newMSG"
+                    type="text"
+                    value={newContent}
+                    onChange={getCurrentHandler}
+                    onKeyDown={keyDownHandler}
+                    placeholder="Enter message"
+                    scrollHeight={scrollHeight}
+                />
+                <SendButton type="submit" isTyping={typingCheckHandler()}>
+                    보내기
+                </SendButton>
+            </UserForm>
+        </UserFormBox>
     );
 };
 
-const UserForm = styled.form`
-    margin: 20px 10px;
+const UserFormBox = styled.div`
     position: relative;
     display: flex;
-    width: 78%;
+    width: 97%;
+    height: 100px;
     align-items: center;
-    border: 1px solid #e6e6e8;
-    border-radius: 2px;
-    background-color: #fff;
-    height: auto;
+    background-color: #f8f8f8;
+    margin: 0 auto 1.5%;
+`;
+
+const UserForm = styled.form`
+    /* margin: 20px 10px; */
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100%;
 `;
 
 const UserInput = styled.textarea`
+    position: absolute;
     padding-left: 10px;
-    width: 92%;
-    border: none;
+    width: 100%;
+    border: 1px solid #c8c8cc;
     resize: none;
     overflow-y: hidden;
-     line-height:24px;
-    height: ${(props) => props.scrollHeight + 'px'};
-    max-height: 230px; 
-    
+    line-height: 24px;
+    height: ${(props) =>
+        props.scrollHeight > 48 ? props.scrollHeight + 'px' : 48 + 'px'};
+    max-height: 230px;
+    bottom: 0;
+
     :hover {
-    box-shadow: box-shadow: 0 0 3px 2px #f00;
-    outline: 1px solid rgb(200, 200, 200);
+        box-shadow: 0 0 3px 2px #f00;
+        outline: 1px solid rgb(200, 200, 200);
     }
 
     :focus {
-    box-shadow: box-shadow: 0 0 3px 2px #f00;
-    outline: 1px solid #343434;
+        box-shadow: 0 0 3px 2px #f00;
+        outline: 1px solid #343434;
     }
 `;
 
 const SendButton = styled.button`
-    top: 10px;
-    weight: 36px;
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    width: 4%;
     height: 36px;
     padding: 2px;
     border: 0;
     border-radius: 2px;
     background-color: ${(props) => (props.isTyping ? '#2196F3' : '#e6e6e8')};
-    margin-right: 4px;
+    margin-right: 6px;
     cursor: pointer;
     color: #fff;
 
