@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 import Message from './Message';
 
 const Messages = () => {
@@ -7,21 +8,27 @@ const Messages = () => {
 
     console.log(data);
     return (
-        <ul>
+        <StyledMessages>
             {data &&
                 data.map((item) => (
                     <Message
                         key={nanoid()}
-                        date={item.date}
                         profileImage={item.profileImage}
                         userName={item.userName}
+                        date={item.date}
                         content={item.content}
                     >
                         {item.userName}
                     </Message>
                 ))}
-        </ul>
+        </StyledMessages>
     );
 };
 
+const StyledMessages = styled.ul`
+    width: 80%;
+    height: 80%;
+    background: rgb(248, 248, 248);
+    overflow: auto;
+`;
 export default Messages;

@@ -64,7 +64,7 @@ const UserForm = styled.form`
     margin: 20px 10px;
     position: relative;
     display: flex;
-    width: 70%;
+    width: 75%;
     align-items: center;
     border: 1px solid #e6e6e8;
     border-radius: 2px;
@@ -85,9 +85,14 @@ const SendButton = styled.button`
     padding: 2px;
     border: 0;
     border-radius: 2px;
-    background-color: ${(props) => (props.isTyping ? '#478bff' : '#e6e6e8')};
+    background-color: ${(props) => (props.isTyping ? '#2196F3' : '#e6e6e8')};
     margin-right: 4px;
     cursor: pointer;
+    color: #fff;
+
+    :hover {
+        background-color: ${(props) => props.isTyping && '#55f'};
+    }
 `;
 
 export default NewMessage;
