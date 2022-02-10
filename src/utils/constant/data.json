@@ -1,0 +1,39 @@
+{
+    "messages": [
+        {
+            "userId": "pikachu",
+            "userName": "피카츄",
+            "profileImage": "https://bit.ly/3rGsJOg",
+            "content": "안녕 나는 피카츄야",
+            "date": "2022-02-10 06:02:57"
+        },
+        {
+            "userId": "lion",
+            "userName": "라이언",
+            "profileImage": "https://bit.ly/3oGCQAT",
+            "content": "나는 라이언",
+            "date": "2022-02-10 07:02:09"
+        },
+        {
+            "userId": "mario",
+            "userName": "마리오",
+            "profileImage": "https://bit.ly/3Jny9nH",
+            "content": "나는 마~ 리오라고 해!",
+            "date": "2022-02-10 08:02:03"
+        },
+        {
+            "userId": "pikachu",
+            "userName": "피카츄",
+            "profileImage": "https://bit.ly/3rGsJOg",
+            "content": "만나서 반가워",
+            "date": "2022-02-10 09:02:17"
+        },
+        {
+            "userId": "mario",
+            "userName": "마리오",
+            "profileImage": "https://bit.ly/3Jny9nH",
+            "content": "잘 부탁해",
+            "date": "2022-02-10 10:02:53"
+        }
+    ]
+}
