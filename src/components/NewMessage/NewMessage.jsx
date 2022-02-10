@@ -1,12 +1,13 @@
 import { Message } from 'models/message';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADD_MESSAGE } from 'store';
+import { ADD_MESSAGE, INIT_INPUT } from 'store';
 import styled from 'styled-components';
 
 const NewMessage = () => {
     const dispatch = useDispatch();
-    const data = useSelector((state) => state);
+    const data = useSelector((state) => state.message);
+    const input = useSelector((state) => state.input);
     const [newContent, setNewContent] = useState('');
 
     const submitHandler = (event) => {
@@ -22,6 +23,7 @@ const NewMessage = () => {
         });
 
         setNewContent('');
+        dispatch({ type: INIT_INPUT });
     };
 
     const getCurrentHandler = (event) => {
@@ -42,7 +44,11 @@ const NewMessage = () => {
 
         return isTyping;
     };
-
+    useEffect(() => {
+        if (input !== '') {
+            setNewContent(input);
+        }
+    }, [input]);
     return (
         <UserForm onSubmit={submitHandler}>
             <label htmlFor="newMSG"></label>
@@ -64,27 +70,35 @@ const UserForm = styled.form`
     margin: 20px 10px;
     position: relative;
     display: flex;
-    width: 80%;
-
+    width: 75%;
+    align-items: center;
     border: 1px solid #e6e6e8;
     border-radius: 2px;
     background-color: #fff;
 `;
 
 const UserInput = styled.input`
+    padding-left: 10px;
+    width: 91%;
     height: 50px;
     border: none;
 `;
 
 const SendButton = styled.button`
+    top: 10px;
     weight: 36px;
     height: 36px;
-    padding: 0;
+    padding: 2px;
     border: 0;
     border-radius: 2px;
-    background-color: ${(props) => (props.isTyping ? '#478bff' : '#e6e6e8')};
+    background-color: ${(props) => (props.isTyping ? '#2196F3' : '#e6e6e8')};
     margin-right: 4px;
     cursor: pointer;
+    color: #fff;
+
+    :hover {
+        background-color: ${(props) => props.isTyping && '#55f'};
+    }
 `;
 
 export default NewMessage;
