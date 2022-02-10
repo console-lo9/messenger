@@ -25,6 +25,7 @@ const MainWrapper = styled.div`
     width: 1000px;
     height: auto;
     padding-left: 200px;
+    background-color: #f8f8f8;
 `;
 
 export default Main;
