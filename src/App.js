@@ -1,15 +1,27 @@
-import NewMessage from 'components/NewMessage/NewMessage';
 import useFetch from 'hooks/useFetch';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
+
 import GlobalStyle from './GlobalStyle';
+import Main from 'pages/Main';
+import { useDispatch, useSelector } from 'react-redux';
+import { FETCH } from 'store/message';
 
 function App() {
-    useFetch('http://localhost:4000/messages');
+    const dispatch = useDispatch();
+    const fetchData = useFetch('http://localhost:4000/messages');
+
+    useEffect(() => {
+        dispatch({
+            type: FETCH,
+            value: fetchData,
+        });
+    }, [fetchData]);
+
+    if (!fetchData) return <div>로딩중</div>;
     return (
         <Fragment>
             <GlobalStyle />
-
-            <NewMessage />
+            <Main />
         </Fragment>
     );
 }
