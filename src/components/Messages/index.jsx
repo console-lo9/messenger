@@ -19,7 +19,7 @@ const Messages = () => {
     };
 
     return (
-        <ul>
+        <StyledMessages>
             {data &&
                 data.map((item) => (
                     <MessageDiv key={nanoid()}>
@@ -43,7 +43,7 @@ const Messages = () => {
                         <hr />
                     </MessageDiv>
                 ))}
-        </ul>
+        </StyledMessages>
     );
 };
 
@@ -53,6 +53,12 @@ const MessageDiv = styled.div`
             display: block;
         }
     }
+`;
+const StyledMessages = styled.ul`
+    width: 80%;
+    height: 80%;
+    background: rgb(248, 248, 248);
+    overflow: auto;
 `;
 
 const ReplyButton = styled.button`
