@@ -9,6 +9,7 @@ const NewMessage = () => {
     const data = useSelector((state) => state.message);
     const input = useSelector((state) => state.input);
     const [newContent, setNewContent] = useState('');
+    const [scrollHeight, setScrollHeight] = useState('');
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -28,7 +29,9 @@ const NewMessage = () => {
 
     const getCurrentHandler = (event) => {
         const typingContent = event.target.value;
+        const currScrollHeight = event.target.scrollHeight;
 
+        setScrollHeight(currScrollHeight);
         setNewContent(typingContent);
     };
 
@@ -44,11 +47,13 @@ const NewMessage = () => {
 
         return isTyping;
     };
+
     useEffect(() => {
         if (input !== '') {
             setNewContent(input);
         }
     }, [input]);
+    console.log(scrollHeight);
     return (
         <UserForm onSubmit={submitHandler}>
             <label htmlFor="newMSG"></label>
@@ -58,6 +63,7 @@ const NewMessage = () => {
                 value={newContent}
                 onChange={getCurrentHandler}
                 placeholder="Enter message"
+                scrollHeight={scrollHeight}
             />
             <SendButton type="submit" isTyping={typingCheckHandler()}>
                 보내기
@@ -70,18 +76,33 @@ const UserForm = styled.form`
     margin: 20px 10px;
     position: relative;
     display: flex;
-    width: 75%;
+    width: 78%;
     align-items: center;
     border: 1px solid #e6e6e8;
     border-radius: 2px;
     background-color: #fff;
+    height: auto;
 `;
 
-const UserInput = styled.input`
+const UserInput = styled.textarea`
     padding-left: 10px;
-    width: 91%;
-    height: 50px;
+    width: 92%;
     border: none;
+    resize: none;
+    overflow-y: hidden;
+     line-height:24px;
+    height: ${(props) => props.scrollHeight + 'px'};
+    max-height: 230px; 
+    
+    :hover {
+    box-shadow: box-shadow: 0 0 3px 2px #f00;
+    outline: 1px solid rgb(200, 200, 200);
+    }
+
+    :focus {
+    box-shadow: box-shadow: 0 0 3px 2px #f00;
+    outline: 1px solid #343434;
+    }
 `;
 
 const SendButton = styled.button`

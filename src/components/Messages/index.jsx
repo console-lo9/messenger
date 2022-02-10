@@ -7,8 +7,8 @@ import { replyInput } from 'store';
 import styled from 'styled-components';
 
 const Messages = () => {
-    const data = useSelector((state) => state.message);
     const dispatch = useDispatch();
+    const data = useSelector((state) => state.message);
 
     const handleReply = (event) => {
         const selectMessage = data.filter(

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import MessageRemove from './MessageRemove';
 
 const Message = (props) => {
     return (
