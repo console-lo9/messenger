@@ -45,7 +45,6 @@ const Messages = () => {
                                 content={item.content}
                             />
                         </ButtonBox>
-
                         <hr />
                     </MessageDiv>
                 ))}
