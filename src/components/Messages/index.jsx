@@ -14,19 +14,45 @@ const Messages = () => {
                 data.map((item) => (
                     <MessageDiv key={nanoid()}>
                         <Message
+                            date={item.date}
                             profileImage={item.profileImage}
                             userName={item.userName}
                             content={item.content}
                         >
                             {item.userName}
                         </Message>
-                        <MessageRemove date={item.date} />
+                        <MessageRemove id={item.commentId} />
+
+                        <ReplyButton
+                            className="reply_div"
+                            onClick={handleReply}
+                            id={item.date}
+                        >
+                            답장
+                        </ReplyButton>
+                        <hr />
                     </MessageDiv>
                 ))}
         </ul>
     );
 };
 
-const MessageDiv = styled.div``;
+const MessageDiv = styled.div`
+    &:hover {
+        .reply_div {
+            display: block;
+        }
+    }
+`;
 
+const StyledMessages = styled.ul`
+    width: 80%;
+    height: 80%;
+    background: rgb(248, 248, 248);
+    overflow: auto;
+`;
+
+const ReplyButton = styled.button`
+    display: none;
+`;
 export default Messages;

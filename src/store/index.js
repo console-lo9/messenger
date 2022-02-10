@@ -26,8 +26,9 @@ const message = (state = initialState, action) => {
             return (state = action.value);
         case ADD_MESSAGE:
             return (state = action.value);
+
         case REMOVE_MESSAGE:
-            return state.filter((item) => item.date !== action.date);
+            return state.filter((item) => item.commentId !== action.payload);
         default:
             return state;
     }
