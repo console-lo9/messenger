@@ -5,11 +5,11 @@ import Message from './Message';
 import MessageRemove from './MessageRemove';
 import { replyInput } from 'store';
 import styled from 'styled-components';
+import { useRef } from 'react';
 
-const Messages = () => {
+const Messages = (props) => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
-
     const handleReply = (event) => {
         const selectMessage = data.filter(
             (item) => item.commentId === event.target.id
@@ -19,7 +19,7 @@ const Messages = () => {
     };
 
     return (
-        <StyledMessages>
+        <StyledMessages ref={props.MsgBox}>
             {data &&
                 data.map((item) => (
                     <MessageDiv key={nanoid()}>
@@ -54,8 +54,9 @@ const Messages = () => {
 
 const StyledMessages = styled.ul`
     width: 100%;
-    height: 80%;
+    height: 100%;
     overflow: auto;
+    background-color: #f8f8f8; ;
 `;
 
 const MessageDiv = styled.div`
@@ -78,8 +79,8 @@ const ButtonBox = styled.div`
 
     & > input[type='button'] {
         background-color: aliceblue;
-        width: 40px;
-        height: 20px;
+        width: 50px;
+        height: 30px;
         border: none;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
     }
