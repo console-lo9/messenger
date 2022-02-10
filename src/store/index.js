@@ -13,7 +13,7 @@ export const addMessage = (userId, userName, profileImage, content) => ({
     content,
 });
 export const replyMessage = () => ({ type: REPLY_MESSAGE });
-export const removeMessage = () => ({ type: REMOVE_MESSAGE });
+export const removeMessage = (date) => ({ type: REMOVE_MESSAGE, date });
 
 const initialState = [];
 
@@ -24,7 +24,8 @@ const message = (state = initialState, action) => {
 
         case ADD_MESSAGE:
             return (state = action.value);
-
+        case REMOVE_MESSAGE:
+            return state.filter((item) => item.date !== action.date);
         default:
             return state;
     }
