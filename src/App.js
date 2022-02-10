@@ -1,3 +1,4 @@
+import NewMessage from 'components/NewMessage/NewMessage';
 import useFetch from 'hooks/useFetch';
 import { Fragment } from 'react';
 import GlobalStyle from './GlobalStyle';
@@ -7,7 +8,8 @@ function App() {
     return (
         <Fragment>
             <GlobalStyle />
-            <div>App</div>
+
+            <NewMessage />
         </Fragment>
     );
 }
