@@ -1,13 +1,23 @@
 import { nanoid } from 'nanoid';
-import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+
+import { useDispatch, useSelector } from 'react-redux';
 import Message from './Message';
 import MessageRemove from './MessageRemove';
+import { replyInput } from 'store';
+import styled from 'styled-components';
 
 const Messages = () => {
-    const data = useSelector((state) => state);
+    const data = useSelector((state) => state.message);
+    const dispatch = useDispatch();
 
-    console.log(data);
+    const handleReply = (event) => {
+        const selectMessage = data.filter(
+            (item) => item.date === event.target.id
+        )[0];
+        const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
+        dispatch(replyInput(input));
+    };
+
     return (
         <StyledMessages>
             {data &&
@@ -17,15 +27,34 @@ const Messages = () => {
                             profileImage={item.profileImage}
                             userName={item.userName}
                             content={item.content}
+                            date={item.date}
                         >
                             {item.userName}
                         </Message>
                         <MessageRemove date={item.date} />
+
+                        <ReplyButton
+                            className="reply_div"
+                            onClick={handleReply}
+                            id={item.date}
+                        >
+                            답장
+                        </ReplyButton>
+                        <hr />
                     </MessageDiv>
                 ))}
         </StyledMessages>
     );
 };
+
+
+const MessageDiv = styled.div`
+    &:hover {
+        .reply_div {
+            display: block;
+        }
+    }
+`;
 
 const StyledMessages = styled.ul`
     width: 80%;
@@ -33,6 +62,8 @@ const StyledMessages = styled.ul`
     background: rgb(248, 248, 248);
     overflow: auto;
 `;
-const MessageDiv = styled.div``;
 
+const ReplyButton = styled.button`
+    display: none;
+`;
 export default Messages;

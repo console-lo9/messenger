@@ -6,6 +6,7 @@ const Message = (props) => {
     return (
         <UserMsg>
             <ProfileImage src={props.profileImage} />
+
             <UserInfo>
                 <div>
                     <UserName>{props.userName}</UserName>
