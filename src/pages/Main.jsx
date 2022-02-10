@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Messages from 'components/Messages';
 import NewMessage from 'components/NewMessage/NewMessage';
 import React from 'react';
@@ -26,17 +25,4 @@ const MainWrapper = styled.div`
     width: 1000px;
 `;
 
-=======
-import React from 'react';
-import NewMessage from 'components/NewMessage';
-const Main = () => {
-    return (
-        <div>
-            <NewMessage />
-            <div>ddd</div>
-        </div>
-    );
-};
-
->>>>>>> ea4a00f (Fix: 오류 수정)
 export default Main;

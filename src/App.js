@@ -3,11 +3,8 @@ import { Fragment, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
-<<<<<<< HEAD
 import { useDispatch } from 'react-redux';
-import { FETCH } from 'store/message';
-=======
->>>>>>> ea4a00f (Fix: 오류 수정)
+import { FETCH } from 'store';
 
 function App() {
     const dispatch = useDispatch();
