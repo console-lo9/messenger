@@ -12,7 +12,7 @@ const Messages = () => {
 
     const handleReply = (event) => {
         const selectMessage = data.filter(
-            (item) => item.date === event.target.id
+            (item) => item.commentId === event.target.id
         )[0];
         const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
         dispatch(replyInput(input));
@@ -32,15 +32,21 @@ const Messages = () => {
                         >
                             {item.userName}
                         </Message>
-                        <MessageRemove id={item.commentId} />
+                        <ButtonBox className="button_box">
+                            <MessageRemove
+                                id={item.commentId}
+                                content={item.content}
+                            />
 
-                        <ReplyButton
-                            className="reply_div"
-                            onClick={handleReply}
-                            id={item.date}
-                        >
-                            답장
-                        </ReplyButton>
+                            <ReplyButton
+                                className="reply_div"
+                                onClick={handleReply}
+                                id={item.commentId}
+                            >
+                                답장
+                            </ReplyButton>
+                        </ButtonBox>
+
                         <hr />
                     </MessageDiv>
                 ))}
@@ -50,10 +56,14 @@ const Messages = () => {
 
 const MessageDiv = styled.div`
     &:hover {
-        .reply_div {
+        .button_box {
             display: block;
         }
     }
+`;
+
+const ButtonBox = styled.div`
+    display: none;
 `;
 
 const StyledMessages = styled.ul`
@@ -63,7 +73,5 @@ const StyledMessages = styled.ul`
     overflow: auto;
 `;
 
-const ReplyButton = styled.button`
-    display: none;
-`;
+const ReplyButton = styled.button``;
 export default Messages;
