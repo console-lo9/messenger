@@ -1,10 +1,9 @@
 import useFetch from 'hooks/useFetch';
 import { Fragment, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
-import { useDispatch } from 'react-redux';
 import { FETCH } from 'store';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
     const dispatch = useDispatch();
@@ -20,7 +19,7 @@ function App() {
     }, [fetchData]);
 
     console.log(state, 'state');
-    if (!fetchData) return <div>로딩중</div>;
+    if (!state) return <div>로딩중</div>;
     return (
         <Fragment>
             <GlobalStyle />
