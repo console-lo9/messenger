@@ -18,9 +18,9 @@ export const addMessage = (userId, userName, profileImage, content) => ({
 export const replyMessage = () => ({ type: REPLY_MESSAGE });
 export const removeMessage = (date) => ({ type: REMOVE_MESSAGE, date });
 
-const initialState = [];
+const messageInitialState = [];
 
-const message = (state = initialState, action) => {
+const message = (state = messageInitialState, action) => {
     switch (action.type) {
         case FETCH:
             return (state = action.value);
