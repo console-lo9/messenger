@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import Message from './Message';
 import MessageRemove from './MessageRemove';
 
@@ -9,7 +9,7 @@ const Messages = () => {
 
     console.log(data);
     return (
-        <ul>
+        <StyledMessages>
             {data &&
                 data.map((item) => (
                     <MessageDiv key={nanoid()}>
@@ -23,10 +23,16 @@ const Messages = () => {
                         <MessageRemove date={item.date} />
                     </MessageDiv>
                 ))}
-        </ul>
+        </StyledMessages>
     );
 };
 
+const StyledMessages = styled.ul`
+    width: 80%;
+    height: 80%;
+    background: rgb(248, 248, 248);
+    overflow: auto;
+`;
 const MessageDiv = styled.div``;
 
 export default Messages;
