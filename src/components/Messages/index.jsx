@@ -20,7 +20,7 @@ const Messages = () => {
                         >
                             {item.userName}
                         </Message>
-                        <MessageRemove date={item.date} />
+                        <MessageRemove date={item.userId} />
                     </MessageDiv>
                 ))}
         </ul>
