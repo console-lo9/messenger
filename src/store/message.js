@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { combineReducers } from '@reduxjs/toolkit';
 
 export const FETCH = 'FETCT';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
@@ -17,7 +17,7 @@ export const removeMessage = () => ({ type: REMOVE_MESSAGE });
 
 const initialState = [];
 
-const message = (state = initialState, action) => {
+const messageReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH:
             return (state = action.value);
@@ -35,6 +35,7 @@ const message = (state = initialState, action) => {
     }
 };
 
-const store = createStore(message);
-
-export default store;
+const rootReducer = combineReducers({
+    messageReducer,
+});
+export default rootReducer;
