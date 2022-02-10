@@ -13,6 +13,11 @@ const Message = (props) => {
 
 const UserMsg = styled.li`
     display: flex;
+    position: relative;
+    paddign: 4px 20px;
+    width: 100%;
+    min-height: 28px;
+    background: rgb(248, 248, 248);
 `;
 
 const ProfileImage = styled.img`

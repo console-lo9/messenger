@@ -12,13 +12,14 @@ const NewMessage = () => {
     const submitHandler = (event) => {
         event.preventDefault();
 
+        if (newContent.trim().length === 0) {
+            return;
+        }
+
         dispatch({
             type: ADD_MESSAGE,
             value: [...data, new Message(newContent)],
         });
-        if (newContent.trim().length === 0) {
-            return;
-        }
 
         setNewContent('');
     };
@@ -42,12 +43,8 @@ const NewMessage = () => {
         return isTyping;
     };
 
-    useEffect(() => {
-        typingCheckHandler();
-    }, [newContent]);
-
     return (
-        <form onSubmit={submitHandler}>
+        <UserForm onSubmit={submitHandler}>
             <label htmlFor="newMSG"></label>
             <UserInput
                 id="newMSG"
@@ -59,13 +56,24 @@ const NewMessage = () => {
             <SendButton type="submit" isTyping={typingCheckHandler()}>
                 보내기
             </SendButton>
-        </form>
+        </UserForm>
     );
 };
 
-const UserInput = styled.input`
+const UserForm = styled.form`
+    margin: 20px 10px;
+    position: relative;
+    display: flex;
     width: 80%;
+
+    border: 1px solid #e6e6e8;
+    border-radius: 2px;
+    background-color: #fff;
+`;
+
+const UserInput = styled.input`
     height: 50px;
+    border: none;
 `;
 
 const SendButton = styled.button`
