@@ -24,6 +24,7 @@ const Messages = () => {
                 data.map((item) => (
                     <MessageDiv key={nanoid()}>
                         <Message
+                            date={item.date}
                             profileImage={item.profileImage}
                             userName={item.userName}
                             content={item.content}
@@ -31,7 +32,7 @@ const Messages = () => {
                         >
                             {item.userName}
                         </Message>
-                        <MessageRemove date={item.date} />
+                        <MessageRemove id={item.commentId} />
 
                         <ReplyButton
                             className="reply_div"
@@ -46,7 +47,6 @@ const Messages = () => {
         </StyledMessages>
     );
 };
-
 
 const MessageDiv = styled.div`
     &:hover {

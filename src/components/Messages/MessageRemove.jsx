@@ -1,25 +1,29 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeMessage } from 'store/message';
+import { REMOVE_MESSAGE } from 'store';
+
 import styled from 'styled-components';
 
 const MessageRemove = (props) => {
     const dispatch = useDispatch();
 
     const handleDelete = (event) => {
-        const targetId = event.target.name;
-        dispatch(removeMessage(targetId));
+        const targetId = event.target.id;
+
+        dispatch({
+            type: REMOVE_MESSAGE,
+            payload: targetId,
+        });
     };
 
     return (
-        <>
-            <RemoveBtn
-                type="button"
-                value="삭제"
-                name={props.date}
-                onClick={handleDelete}
-            />
-        </>
+        <RemoveBtn
+            type="button"
+            value="삭제"
+            id={props.id}
+            name={props.date}
+            onClick={handleDelete}
+        />
     );
 };
 
