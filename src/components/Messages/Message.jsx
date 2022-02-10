@@ -5,7 +5,9 @@ const Message = (props) => {
     return (
         <UserMsg>
             <ProfileImage src={props.profileImage} />
-            <div>{props.userName}</div>
+            <div>
+                {props.userName} {props.date.toString()}
+            </div>
             <div>{props.content}</div>
         </UserMsg>
     );

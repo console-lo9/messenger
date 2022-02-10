@@ -27,6 +27,7 @@ const Messages = () => {
                             profileImage={item.profileImage}
                             userName={item.userName}
                             content={item.content}
+                            date={item.date}
                         >
                             {item.userName}
                         </Message>

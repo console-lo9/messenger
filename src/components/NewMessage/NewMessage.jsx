@@ -1,12 +1,13 @@
 import { Message } from 'models/message';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADD_MESSAGE } from 'store';
+import { ADD_MESSAGE, INIT_INPUT } from 'store';
 import styled from 'styled-components';
 
 const NewMessage = () => {
     const dispatch = useDispatch();
-    const data = useSelector((state) => state);
+    const data = useSelector((state) => state.message);
+    const input = useSelector((state) => state.input);
     const [newContent, setNewContent] = useState('');
 
     const submitHandler = (event) => {
@@ -22,6 +23,7 @@ const NewMessage = () => {
         });
 
         setNewContent('');
+        dispatch({ type: INIT_INPUT });
     };
 
     const getCurrentHandler = (event) => {
@@ -42,7 +44,11 @@ const NewMessage = () => {
 
         return isTyping;
     };
-
+    useEffect(() => {
+        if (input !== '') {
+            setNewContent(input);
+        }
+    }, [input]);
     return (
         <UserForm onSubmit={submitHandler}>
             <label htmlFor="newMSG"></label>
