@@ -24,6 +24,7 @@ const message = (state = messageInitialState, action) => {
     switch (action.type) {
         case FETCH:
             return (state = action.value);
+
         case ADD_MESSAGE:
             return (state = action.value);
 

@@ -53,7 +53,7 @@ const NewMessage = () => {
             setNewContent(input);
         }
     }, [input]);
-
+    console.log(scrollHeight);
     return (
         <UserForm onSubmit={submitHandler}>
             <label htmlFor="newMSG"></label>
@@ -88,11 +88,12 @@ const UserInput = styled.textarea`
     padding-left: 10px;
     width: 92%;
     border: none;
-    /* resize: none; */
-    overflow: none;
-
-    height: ${(props) => props.scrollHeight};
-
+    resize: none;
+    overflow-y: hidden;
+     line-height:24px;
+    height: ${(props) => props.scrollHeight + 'px'};
+    max-height: 230px; 
+    
     :hover {
     box-shadow: box-shadow: 0 0 3px 2px #f00;
     outline: 1px solid rgb(200, 200, 200);

@@ -23,6 +23,8 @@ const MainWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     width: 1000px;
+    height: auto;
+    padding-left: 200px;
 `;
 
 export default Main;

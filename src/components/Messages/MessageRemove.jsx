@@ -7,13 +7,23 @@ import styled from 'styled-components';
 const MessageRemove = (props) => {
     const dispatch = useDispatch();
 
-    const handleDelete = (event) => {
+    const handleRemove = (event) => {
         const targetId = event.target.id;
-
-        dispatch({
-            type: REMOVE_MESSAGE,
-            payload: targetId,
-        });
+        let targetContent = props.content;
+        targetContent.length > 10
+            ? (targetContent = `${targetContent.slice(0, 10)}...`)
+            : (targetContent = targetContent);
+        const RemoveCheck = window.confirm(
+            `"${targetContent}" 메시지를 삭제하시겠습니까?`
+        );
+        if (RemoveCheck) {
+            dispatch({
+                type: REMOVE_MESSAGE,
+                payload: targetId,
+            });
+        } else {
+            return;
+        }
     };
 
     return (
@@ -22,7 +32,7 @@ const MessageRemove = (props) => {
             value="삭제"
             id={props.id}
             name={props.date}
-            onClick={handleDelete}
+            onClick={handleRemove}
         />
     );
 };

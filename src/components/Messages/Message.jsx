@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import MessageRemove from './MessageRemove';
 
 const Message = (props) => {
     return (
@@ -25,7 +24,6 @@ const UserMsg = styled.li`
     width: 100%;
     min-height: 28px;
     background: rgb(248, 248, 248);
-
     :hover {
         background: rgb(240, 240, 240);
     }
@@ -35,7 +33,6 @@ const UserInfo = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-
     > div {
         margin-bottom: 10px;
     }
