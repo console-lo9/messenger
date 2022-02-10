@@ -7,7 +7,7 @@ const Message = (props) => {
             <ProfileImage src={props.profileImage} />
             <UserInfo>
                 <div>
-                    <span>{props.userName}</span>
+                    <UserName>{props.userName}</UserName>
                     <span>{props.date}</span>
                 </div>
                 <div>{props.content}</div>
@@ -29,9 +29,14 @@ const UserInfo = styled.div`
     display: flex;
     flex-direction: column;
 `;
+
 const ProfileImage = styled.img`
     width: 50px;
     height: 50px;
+`;
+
+const UserName = styled.span`
+    font-weight: 700;
 `;
 
 export default Message;
