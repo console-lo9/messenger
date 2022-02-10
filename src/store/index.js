@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 
-export const FETCH = 'FETCT';
+export const FETCH = 'FETCH';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const REPLY_MESSAGE = 'REPLY_MESSAGE';
 export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
