@@ -20,7 +20,7 @@ const MessageRemove = (props) => {
         <RemoveBtn
             type="button"
             value="삭제"
-            id={props.commentId}
+            id={props.id}
             name={props.date}
             onClick={handleDelete}
         />
