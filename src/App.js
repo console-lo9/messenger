@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
 import { useDispatch } from 'react-redux';
-import { FETCH } from 'store';
+import { FETCH } from 'store/message';
 
 function App() {
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function App() {
     }, [fetchData]);
 
     console.log(state, 'state');
-
+    if (!fetchData) return <div>로딩중</div>;
     return (
         <Fragment>
             <GlobalStyle />
