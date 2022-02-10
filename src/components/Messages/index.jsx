@@ -1,7 +1,8 @@
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import Message from './Message';
+import MessageRemove from './MessageRemove';
 
 const Messages = () => {
     const data = useSelector((state) => state);
@@ -11,14 +12,16 @@ const Messages = () => {
         <ul>
             {data &&
                 data.map((item) => (
-                    <Message
-                        key={nanoid()}
-                        profileImage={item.profileImage}
-                        userName={item.userName}
-                        content={item.content}
-                    >
-                        {item.userName}
-                    </Message>
+                    <MessageDiv key={nanoid()}>
+                        <Message
+                            profileImage={item.profileImage}
+                            userName={item.userName}
+                            content={item.content}
+                        >
+                            {item.userName}
+                        </Message>
+                        <MessageRemove date={item.date} />
+                    </MessageDiv>
                 ))}
         </ul>
     );

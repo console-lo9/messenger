@@ -1,21 +1,24 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { removeMessage } from 'store/message';
 import styled from 'styled-components';
 
-const MessageRemove = () => {
+const MessageRemove = (props) => {
     const dispatch = useDispatch();
-    const message = useSelector((state) => state);
 
     const handleDelete = (event) => {
-        const targetId = event.currentTarget;
-        console.log(targetId);
+        const targetId = event.target.name;
+        dispatch(removeMessage(targetId));
     };
-    console.log('ads', message);
 
     return (
         <>
-            <RemoveBtn type="button" value="삭제" onClick={handleDelete} />
+            <RemoveBtn
+                type="button"
+                value="삭제"
+                name={props.date}
+                onClick={handleDelete}
+            />
         </>
     );
 };
