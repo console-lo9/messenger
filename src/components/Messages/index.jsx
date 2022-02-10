@@ -33,18 +33,17 @@ const Messages = () => {
                             {item.userName}
                         </Message>
                         <ButtonBox className="button_box">
-                            <MessageRemove
-                                id={item.commentId}
-                                content={item.content}
-                            />
-
                             <ReplyButton
                                 className="reply_div"
                                 onClick={handleReply}
                                 id={item.commentId}
-                            >
-                                답장
-                            </ReplyButton>
+                                type="button"
+                                value="답장"
+                            />
+                            <MessageRemove
+                                id={item.commentId}
+                                content={item.content}
+                            />
                         </ButtonBox>
 
                         <hr />
@@ -54,7 +53,15 @@ const Messages = () => {
     );
 };
 
+const StyledMessages = styled.ul`
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+`;
+
 const MessageDiv = styled.div`
+    position: relative;
+    background-color: #f1f1f1;
     &:hover {
         .button_box {
             display: block;
@@ -64,14 +71,23 @@ const MessageDiv = styled.div`
 
 const ButtonBox = styled.div`
     display: none;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-60%);
+    justify-content: center;
+
+    & > input[type='button'] {
+        background-color: aliceblue;
+        width: 40px;
+        height: 20px;
+        border: none;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
+    }
 `;
 
-const StyledMessages = styled.ul`
-    width: 80%;
-    height: 80%;
-    background: rgb(248, 248, 248);
-    overflow: auto;
+const ReplyButton = styled.input`
+    margin-right: 5px;
 `;
 
-const ReplyButton = styled.button``;
 export default Messages;

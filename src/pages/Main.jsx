@@ -23,6 +23,7 @@ const MainWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     width: 1000px;
+    background-color: #f8f8f8;
 `;
 
 export default Main;
