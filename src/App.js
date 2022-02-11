@@ -10,7 +10,6 @@ import Login from 'components/Login';
 
 import Modal from 'components/Modal';
 
-
 function App() {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.message);
@@ -37,7 +36,6 @@ function App() {
     return (
         <Fragment>
             <GlobalStyle />
-
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/main" element={<Main />} />
