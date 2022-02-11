@@ -1,5 +1,5 @@
 import { Message } from 'models/message';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { initInput } from 'store';
 import { ADD_MESSAGE, INIT_INPUT } from 'store';
@@ -16,6 +16,7 @@ const NewMessage = (props) => {
     const input = useSelector((state) => state.input);
     const [newContent, setNewContent] = useState('');
     const [scrollHeight, setScrollHeight] = useState(48);
+    const inputRef = useRef();
 
     const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
 
@@ -88,12 +89,15 @@ const NewMessage = (props) => {
         });
     };
     useEffect(() => {
+        scrollHandler();
+    }, [data, scrollHeight]);
+    useEffect(() => {
         if (input !== '') {
             setNewContent(input);
+            setScrollHeight(96);
+            inputRef.current.focus();
         }
-        scrollHandler();
-    }, [input, data, scrollHeight]);
-
+    }, [input]);
     return (
         <UserFormBox>
             <UserForm onSubmit={submitHandler}>
@@ -106,6 +110,7 @@ const NewMessage = (props) => {
                     onKeyDown={keyDownHandler}
                     placeholder="Enter message"
                     scrollHeight={scrollHeight}
+                    ref={inputRef}
                 />
                 <SendButton type="submit" isTyping={typingCheckHandler()}>
                     보내기
