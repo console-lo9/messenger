@@ -45,14 +45,15 @@ export const Label = styled.h1`
 `;
 
 export const Input = styled.input`
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
     display: block;
     width: 50%;
-    border: none;
-    border-bottom: 1px solid ${COLOR.LINE_BLACK};
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
     margin-bottom: 20px;
-    padding: 10px;
+    border: {
+        none
+        bottom:  1px solid ${COLOR.LINE_BLACK};
+    }
 `;
 
 export const JoinBtn = styled.button`

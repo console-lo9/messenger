@@ -14,13 +14,13 @@ export const SectionRightWrapper = styled.div`
 `;
 
 export const MainWrapper = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex: 4 0 0;
     width: 100%;
     height: auto;
-    flex: 4 0 0;
-    position: relative;
     background-color: ${COLOR.BACK_GROUND_GREY};
 
     & > div:nth-child(1) {
@@ -35,14 +35,16 @@ export const MainWrapper = styled.div`
 `;
 
 export const ChannelHeader = styled.div`
+    display: flex;
+    align-items: center;
     width: inherit;
     min-height: 60px;
     border-bottom: 1px solid ${COLOR.LINE_GREY};
-    display: flex;
-    align-items: center;
     background-color: ${COLOR.WHITE};
-    font-weight: 700;
-    font-size: 16px;
+    font: {
+        weight: 700;
+        size: 16px;
+    }
 `;
 
 export const StarIcon = styled.img`

@@ -18,11 +18,13 @@ export const SummaryBtn = styled.button`
     color: ${COLOR.BUTTON_BLUE};
     font-size: 14px;
     font-weight: 400;
-    border: 0;
-    border-radius: 4px;
     background: none;
     box-sizing: border-box;
     text-decoration: none;
+    border:{
+        0;
+        radius: 4px;
+    }
     cursor: pointer;
     &:hover {
         background-color: ${COLOR.HOVER_GRAY};

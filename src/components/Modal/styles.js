@@ -6,9 +6,9 @@ export const DarkBackground = styled.div`
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
+    height: 100%;
+    width: 100%;
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.8);
@@ -31,8 +31,10 @@ export const ModalHeader = styled.div`
     padding: 20px;
 `;
 export const Title = styled.h2`
-    font-size: 26px;
-    font-weight: bold;
+    font: {
+        size: 26px;
+        weight: bold;
+    }
 `;
 export const ModalContents = styled.div`
     padding: 0px 20px;
@@ -41,9 +43,9 @@ export const ModalContents = styled.div`
     }
 `;
 export const ModalFooter = styled.div`
-    padding: 40px 20px 20px;
     display: flex;
     justify-content: flex-end;
+    padding: 40px 20px 20px;
 `;
 export const CancelButton = styled(Button)`
     border: 1px solid #e6e5e8;
@@ -59,7 +61,6 @@ export const CloseButton = styled.button`
     position: absolute;
     top: 0;
     right: 0;
-    /* background-color: black; */
     width: 30px;
     height: 30px;
     margin: 10px;
