@@ -16,52 +16,50 @@ const Main = () => {
     const currentUser = localStorage.getItem('userName');
 
     return (
-        <Fragment>
-            <MainContainer>
-                <Header>
-                    <Logo>C</Logo>
-                    <span>console.lo9</span>
-                </Header>
-                <SectionRightWrapper>
-                    <SideNav>
-                        <div>
-                            <SummaryBtn>
-                                <i></i>
-                                Browse channels
-                            </SummaryBtn>
-                        </div>
+        <MainContainer>
+            <Header>
+                <Logo>C</Logo>
+                <span>console.lo9</span>
+            </Header>
+            <SectionRightWrapper>
+                <SideNav>
+                    <div>
+                        <SummaryBtn>
+                            <i></i>
+                            Browse channels
+                        </SummaryBtn>
+                    </div>
 
-                        <SideMenuWrapper>
-                            <span>Channerls</span>
-                        </SideMenuWrapper>
+                    <SideMenuWrapper>
+                        <span>Channerls</span>
+                    </SideMenuWrapper>
 
-                        <SideMenuWrapper>
-                            <span>General</span>
-                        </SideMenuWrapper>
+                    <SideMenuWrapper>
+                        <span>General</span>
+                    </SideMenuWrapper>
 
-                        <SideMenuWrapper>
-                            <span>Direct messages</span>
-                        </SideMenuWrapper>
+                    <SideMenuWrapper>
+                        <span>Direct messages</span>
+                    </SideMenuWrapper>
 
-                        <CurentUser>
-                            <span>{currentUser} (me)</span>
-                            <span></span>
-                        </CurentUser>
-                    </SideNav>
-                    <MainWrapper>
-                        <ChannelHeader>
-                            <StarIcon src={star}></StarIcon>
-                            <span>General</span>
-                            <ArrowIcon src={arrowDown}></ArrowIcon>
-                        </ChannelHeader>
+                    <CurentUser>
+                        <span>{currentUser} (me)</span>
+                        <span></span>
+                    </CurentUser>
+                </SideNav>
+                <MainWrapper>
+                    <ChannelHeader>
+                        <StarIcon src={star}></StarIcon>
+                        <span>General</span>
+                        <ArrowIcon src={arrowDown}></ArrowIcon>
+                    </ChannelHeader>
 
-                        <Messages MsgBox={MsgBoxRef} />
-                        <NewMessage MsgBox={MsgBoxRef} />
-                    </MainWrapper>
-                </SectionRightWrapper>
-            </MainContainer>
+                    <Messages MsgBox={MsgBoxRef} />
+                    <NewMessage MsgBox={MsgBoxRef} />
+                </MainWrapper>
+            </SectionRightWrapper>
             {modal.openModal && <Modal title={modal.title} />}
-        </Fragment>
+        </MainContainer>
     );
 };
 
