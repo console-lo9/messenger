@@ -7,6 +7,7 @@ import { Message } from 'models/message';
 import { FiSend } from 'react-icons/fi';
 
 import * as S from './styles';
+import { COLOR } from 'utils/constants/styles';
 
 const NewMessage = ({ MsgBox }) => {
     const dispatch = useDispatch();
@@ -97,14 +98,16 @@ const NewMessage = ({ MsgBox }) => {
                     scrollHeight={scrollHeight}
                     ref={inputRef}
                 />
-                <S.SendButton
-                    type="submit"
-                    isTyping={typingCheckHandler()}
-                    color="#478bff"
-                    size="mediumSquare"
-                >
-                    <FiSend />
-                </S.SendButton>
+                <S.ButtonDiv>
+                    <S.SendButton
+                        type="submit"
+                        isTyping={typingCheckHandler()}
+                        color={COLOR.BUTTON_BLUE}
+                        size="mediumSquare"
+                    >
+                        <FiSend />
+                    </S.SendButton>
+                </S.ButtonDiv>
             </S.UserForm>
         </S.UserFormBox>
     );
