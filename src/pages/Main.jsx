@@ -10,7 +10,6 @@ import star from 'assets/star-btn.png';
 import styled from 'styled-components';
 import Modal from 'components/Modal';
 import { FaChevronDown, FaCaretDown, FaCaretRight } from 'react-icons/fa';
-import { FiPlusCircle } from 'react-icons/fi';
 import { MdManageSearch } from 'react-icons/md';
 import { HiPlus } from 'react-icons/hi';
 
