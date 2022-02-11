@@ -2,10 +2,11 @@ import Messages from 'components/Messages';
 import NewMessage from 'components/NewMessage/NewMessage';
 import React from 'react';
 import styled from 'styled-components';
-
+import Login from 'components/Login';
 const Main = () => {
     return (
         <Wrapper>
+            <Login />
             <MainWrapper>
                 <Messages />
                 <NewMessage />

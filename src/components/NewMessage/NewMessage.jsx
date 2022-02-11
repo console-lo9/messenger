@@ -10,6 +10,9 @@ const NewMessage = () => {
     const input = useSelector((state) => state.input);
     const [newContent, setNewContent] = useState('');
 
+    const currentUser = useSelector((state) => state.userReducer);
+    console.log('현재 유저', currentUser);
+
     const submitHandler = (event) => {
         event.preventDefault();
 

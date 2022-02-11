@@ -1,16 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import MessageRemove from './MessageRemove';
+import { useSelector } from 'react-redux';
 
 const Message = (props) => {
+    const currentUser = useSelector((state) => state.userReducer);
+    console.log('Message', currentUser);
+
     return (
         <UserMsg>
             <ProfileImage src={props.profileImage} />
-
             <UserInfo>
                 <div>
-                    <UserName>{props.userName}</UserName>
-                    <span>{props.date}</span>
+                    {currentUser ? (
+                        <UserName>{currentUser}</UserName>
+                    ) : (
+                        <UserName>{props.userName}</UserName>
+                    )}
+
+                    <span> {props.date}</span>
                 </div>
                 <div>{props.content}</div>
             </UserInfo>

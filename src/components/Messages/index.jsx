@@ -1,5 +1,4 @@
 import { nanoid } from 'nanoid';
-
 import { useDispatch, useSelector } from 'react-redux';
 import Message from './Message';
 import MessageRemove from './MessageRemove';
@@ -17,6 +16,9 @@ const Messages = () => {
         const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
         dispatch(replyInput(input));
     };
+
+    const currentUser = useSelector((state) => state.userReducer);
+    console.log('Message', currentUser);
 
     return (
         <StyledMessages>
