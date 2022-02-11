@@ -1,11 +1,8 @@
 import { useSelector } from 'react-redux';
-
 import Message from './Message';
 import MessageRemove from './MessageRemove';
 import MessageReply from './MessageReply';
-
 import { nanoid } from 'nanoid';
-
 import styled from 'styled-components';
 
 const Messages = (props) => {
