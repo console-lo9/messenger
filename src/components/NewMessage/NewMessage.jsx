@@ -1,14 +1,23 @@
 import { Message } from 'models/message';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { initInput } from 'store';
 import { ADD_MESSAGE, INIT_INPUT } from 'store';
-import styled from 'styled-components';
+import {
+    SendButton,
+    UserForm,
+    UserFormBox,
+    UserInput,
+} from './styled-new-message';
 
-const NewMessage = () => {
+const NewMessage = (props) => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
     const input = useSelector((state) => state.input);
     const [newContent, setNewContent] = useState('');
+    const [scrollHeight, setScrollHeight] = useState(48);
+
+    const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -19,16 +28,22 @@ const NewMessage = () => {
 
         dispatch({
             type: ADD_MESSAGE,
-            value: [...data, new Message(newContent)],
+            value: [...data, new Message(replacedContent)],
         });
 
         setNewContent('');
-        dispatch({ type: INIT_INPUT });
+        dispatch(initInput());
+        // dispatch({ type: INIT_INPUT });
+
+        //  submit하면 textarea 길이 초기화
+        setScrollHeight(0);
     };
 
     const getCurrentHandler = (event) => {
         const typingContent = event.target.value;
+        const currScrollHeight = event.target.scrollHeight;
 
+        setScrollHeight(currScrollHeight);
         setNewContent(typingContent);
     };
 
@@ -44,61 +59,60 @@ const NewMessage = () => {
 
         return isTyping;
     };
+
+    const keyDownHandler = (event) => {
+        const typingContentLength = newContent.trim().length;
+        const targetKey = event.keyCode;
+
+        if (targetKey === 13 && !event.shiftKey) {
+            event.preventDefault();
+            if (typingContentLength === 0) {
+                return;
+            }
+            dispatch({
+                type: ADD_MESSAGE,
+                value: [...data, new Message(replacedContent)],
+            });
+            setNewContent('');
+            dispatch({ type: INIT_INPUT });
+            setScrollHeight(0);
+
+            props.MsgBox.current.scrollTo({
+                top: props.MsgBox.current.scrollHeight + 100,
+            });
+        }
+    };
+    const scrollHandler = () => {
+        props.MsgBox.current.scrollTo({
+            top: props.MsgBox.current.scrollHeight,
+        });
+    };
     useEffect(() => {
         if (input !== '') {
             setNewContent(input);
         }
-    }, [input]);
+        scrollHandler();
+    }, [input, data, scrollHeight]);
+
     return (
-        <UserForm onSubmit={submitHandler}>
-            <label htmlFor="newMSG"></label>
-            <UserInput
-                id="newMSG"
-                type="text"
-                value={newContent}
-                onChange={getCurrentHandler}
-                placeholder="Enter message"
-            />
-            <SendButton type="submit" isTyping={typingCheckHandler()}>
-                보내기
-            </SendButton>
-        </UserForm>
+        <UserFormBox>
+            <UserForm onSubmit={submitHandler}>
+                <label htmlFor="newMSG"></label>
+                <UserInput
+                    id="newMSG"
+                    type="text"
+                    value={newContent}
+                    onChange={getCurrentHandler}
+                    onKeyDown={keyDownHandler}
+                    placeholder="Enter message"
+                    scrollHeight={scrollHeight}
+                />
+                <SendButton type="submit" isTyping={typingCheckHandler()}>
+                    보내기
+                </SendButton>
+            </UserForm>
+        </UserFormBox>
     );
 };
-
-const UserForm = styled.form`
-    margin: 20px 10px;
-    position: relative;
-    display: flex;
-    width: 75%;
-    align-items: center;
-    border: 1px solid #e6e6e8;
-    border-radius: 2px;
-    background-color: #fff;
-`;
-
-const UserInput = styled.input`
-    padding-left: 10px;
-    width: 91%;
-    height: 50px;
-    border: none;
-`;
-
-const SendButton = styled.button`
-    top: 10px;
-    weight: 36px;
-    height: 36px;
-    padding: 2px;
-    border: 0;
-    border-radius: 2px;
-    background-color: ${(props) => (props.isTyping ? '#2196F3' : '#e6e6e8')};
-    margin-right: 4px;
-    cursor: pointer;
-    color: #fff;
-
-    :hover {
-        background-color: ${(props) => props.isTyping && '#55f'};
-    }
-`;
 
 export default NewMessage;

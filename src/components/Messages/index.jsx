@@ -1,25 +1,18 @@
-import { nanoid } from 'nanoid';
+import { useSelector } from 'react-redux';
 
-import { useDispatch, useSelector } from 'react-redux';
 import Message from './Message';
 import MessageRemove from './MessageRemove';
-import { replyInput } from 'store';
+import MessageReply from './MessageReply';
+
+import { nanoid } from 'nanoid';
+
 import styled from 'styled-components';
 
-const Messages = () => {
+const Messages = (props) => {
     const data = useSelector((state) => state.message);
-    const dispatch = useDispatch();
-
-    const handleReply = (event) => {
-        const selectMessage = data.filter(
-            (item) => item.commentId === event.target.id
-        )[0];
-        const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
-        dispatch(replyInput(input));
-    };
 
     return (
-        <StyledMessages>
+        <StyledMessages ref={props.MsgBox}>
             {data &&
                 data.map((item) => (
                     <MessageDiv key={nanoid()}>
@@ -33,28 +26,29 @@ const Messages = () => {
                             {item.userName}
                         </Message>
                         <ButtonBox className="button_box">
+                            <MessageReply id={item.commentId} />
                             <MessageRemove
                                 id={item.commentId}
                                 content={item.content}
                             />
-
-                            <ReplyButton
-                                className="reply_div"
-                                onClick={handleReply}
-                                id={item.commentId}
-                            >
-                                답장
-                            </ReplyButton>
                         </ButtonBox>
-
-                        <hr />
                     </MessageDiv>
                 ))}
         </StyledMessages>
     );
 };
 
+const StyledMessages = styled.ul`
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    background-color: #f8f8f8;
+    flex: 1 1 0;
+`;
+
 const MessageDiv = styled.div`
+    position: relative;
+    background-color: #f1f1f1;
     &:hover {
         .button_box {
             display: block;
@@ -63,15 +57,20 @@ const MessageDiv = styled.div`
 `;
 
 const ButtonBox = styled.div`
+    position: absolute;
     display: none;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-60%);
+    justify-content: center;
+
+    & > input[type='button'] {
+        background-color: aliceblue;
+        width: 50px;
+        height: 30px;
+        border: none;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
+    }
 `;
 
-const StyledMessages = styled.ul`
-    width: 80%;
-    height: 80%;
-    background: rgb(248, 248, 248);
-    overflow: auto;
-`;
-
-const ReplyButton = styled.button``;
 export default Messages;

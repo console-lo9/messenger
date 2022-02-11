@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import MessageRemove from './MessageRemove';
 
 const Message = (props) => {
     return (
@@ -33,10 +32,12 @@ const UserMsg = styled.li`
 const UserInfo = styled.div`
     display: flex;
     flex-direction: column;
+    white-space: pre-wrap;
     margin-left: 10px;
     > div {
         margin-bottom: 10px;
     }
+    white-space: pre-wrap;
 `;
 
 const ProfileImage = styled.img`

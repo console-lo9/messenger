@@ -37,9 +37,6 @@ const MessageRemove = (props) => {
     );
 };
 
-const RemoveBtn = styled.input`
-    width: 40px;
-    height: 20px;
-`;
+const RemoveBtn = styled.input``;
 
 export default MessageRemove;
