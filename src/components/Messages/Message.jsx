@@ -5,15 +5,14 @@ import { useSelector } from 'react-redux';
 
 const Message = (props) => {
     const currentUser = useSelector((state) => state.userReducer);
-    console.log('Message', currentUser);
 
     return (
         <UserMsg>
             <ProfileImage src={props.profileImage} />
             <UserInfo>
                 <div>
-                    {currentUser ? (
-                        <UserName>{currentUser}</UserName>
+                    {currentUser === props.userName ? (
+                        <UserName>{props.userName} *</UserName>
                     ) : (
                         <UserName>{props.userName}</UserName>
                     )}

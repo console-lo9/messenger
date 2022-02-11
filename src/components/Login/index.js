@@ -2,21 +2,18 @@ import { useState } from 'react';
 
 import Logout from './Logout';
 import Main from 'pages/Main';
-import { LOGIN, LOGOUT } from 'store/user';
+import { LOGIN, LOGOUT, REGIST } from 'store/user';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 
 const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
 
-    const userIdHandler = (e) => {
-        setUserId(e.target.value);
-    };
     const userNameHandler = (e) => {
         setUserName(e.target.value);
     };
@@ -24,24 +21,28 @@ const Login = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         localStorage.setItem('userName', userName);
+        // const registUser = {
+        //     userId: nanoid(),
+        //     userName: userName,
+        //     profileImage: '',
+        // };
+        // dispatch({
+        //     type: REGIST,
+        //     value: registUser,
+        // });
         dispatch({
             type: LOGIN,
-            value: userName,
+            userName,
         });
-        navigate('main');
+        navigate('/main');
     };
-    const user = useSelector((state) => state.userReducer);
+
     return (
         <div>
             <form onSubmit={onSubmitHandler}>
                 <h1>Login</h1>
                 <input
-                    placeholder="UserId"
-                    value={userId}
-                    onChange={userIdHandler}
-                />
-                <input
-                    placeholder="UserName"
+                    placeholder="이름을 입력해주세요"
                     value={userName}
                     onChange={userNameHandler}
                 />

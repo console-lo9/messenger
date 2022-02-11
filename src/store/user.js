@@ -1,12 +1,15 @@
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
+export const REGIST = 'REGIST';
 
 const currentUser = '';
 
 const userReducer = (state = currentUser, action) => {
     switch (action.type) {
+        case REGIST:
+            return (state = action.value);
         case LOGIN:
-            return action.value;
+            return action.userName;
         case LOGOUT:
             if (state === action.value) return '';
         default:

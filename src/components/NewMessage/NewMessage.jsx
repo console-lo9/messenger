@@ -22,7 +22,7 @@ const NewMessage = () => {
 
         dispatch({
             type: ADD_MESSAGE,
-            value: [...data, new Message(newContent)],
+            value: [...data, new Message(currentUser, newContent)],
         });
 
         setNewContent('');
