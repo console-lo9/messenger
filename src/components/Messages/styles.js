@@ -7,6 +7,7 @@ export const StyledMessages = styled.ul`
     overflow: auto;
     background-color: #f8f8f8;
     flex: 1 1 0;
+    padding-top: 20px;
 `;
 
 export const MessageDiv = styled.div`
