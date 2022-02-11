@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import Button from 'layout/Button';
+import styled, { css } from 'styled-components';
 
 export const UserFormBox = styled.div`
     display: flex;
@@ -41,21 +42,11 @@ export const UserInput = styled.textarea`
     }
 `;
 
-export const SendButton = styled.button`
+export const SendButton = styled(Button)`
     position: absolute;
     bottom: 6px;
-    right: 0;
-    width: 4%;
-    height: 36px;
-    padding: 2px;
-    border: 0;
-    border-radius: 2px;
+    right: 5px;
     background-color: ${(props) => (props.isTyping ? '#2196F3' : '#e6e6e8')};
-    margin-right: 6px;
     cursor: pointer;
     color: #fff;
-
-    :hover {
-        background-color: ${(props) => props.isTyping && '#55f'};
-    }
 `;

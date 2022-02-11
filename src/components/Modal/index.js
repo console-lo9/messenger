@@ -3,6 +3,7 @@ import { REMOVE_MESSAGE } from 'store';
 import { closeModal } from 'store/modal';
 import styled from 'styled-components';
 import esc from 'assets/esc-large-nor.svg';
+import Button from 'layout/Button';
 
 const Modal = ({ title }) => {
     const dispatch = useDispatch();
@@ -27,8 +28,16 @@ const Modal = ({ title }) => {
                     <p>{modal.content} 메시지를 삭제하시겠습니까?</p>
                 </ModalContents>
                 <ModalFooter>
-                    <Button onClick={handleClose}>취소</Button>
-                    <Button onClick={handleDelete}>삭제</Button>
+                    <CancelButton size="medium" onClick={handleClose}>
+                        취소
+                    </CancelButton>
+                    <DeleteButton
+                        size="medium"
+                        color="#a41300"
+                        onClick={handleDelete}
+                    >
+                        삭제
+                    </DeleteButton>
                 </ModalFooter>
                 <CloseButton onClick={handleClose} />
             </DialogBlock>
@@ -78,21 +87,15 @@ const ModalFooter = styled.div`
     display: flex;
     justify-content: flex-end;
 `;
-
-const Button = styled.button`
-    width: 50px;
-    height: 30px;
-    border: 2px solid lightgray;
-    border-radius: 4px;
-    color: #707070;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    cursor: pointer;
-    & + & {
-        margin-left: 5px;
+const CancelButton = styled(Button)`
+    border: 1px solid #e6e5e8;
+    color: #8c8e94;
+    &:hover {
+        border: 1px solid #b7b8bd;
     }
+`;
+const DeleteButton = styled(Button)`
+    color: white;
 `;
 const CloseButton = styled.button`
     position: absolute;
