@@ -8,7 +8,6 @@ export const UserFormBox = styled.div`
     align-items: center;
     background-color: #f8f8f8;
     margin: 20px auto 1.5%;
-    flex: 1;
 `;
 
 export const UserForm = styled.form`

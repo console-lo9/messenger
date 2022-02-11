@@ -6,7 +6,6 @@ import { nanoid } from 'nanoid';
 import { replyInput } from 'store';
 
 import styled from 'styled-components';
-import NewMessage from 'components/NewMessage/NewMessage';
 
 const Messages = (props) => {
     const dispatch = useDispatch();
@@ -53,9 +52,6 @@ const Messages = (props) => {
 };
 
 const StyledMessages = styled.ul`
-    display: flex;
-    flex-direction: column;
-    flex: 1;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -74,8 +70,8 @@ const MessageDiv = styled.div`
 `;
 
 const ButtonBox = styled.div`
-    display: none;
     position: absolute;
+    display: none;
     top: 50%;
     right: 3%;
     transform: translateY(-60%);

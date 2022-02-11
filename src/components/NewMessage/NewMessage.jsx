@@ -63,11 +63,7 @@ const NewMessage = (props) => {
     const keyDownHandler = (event) => {
         const typingContentLength = newContent.trim().length;
         const targetKey = event.keyCode;
-
-        // if (typingContentLength === 0 && targetKey === 13) {
-        //     event.preventDefault();
-        //     return;
-        // }
+        const test = newContent.replace(/(^\s*)|(\s*$)/gi, '');
 
         if (targetKey === 13 && !event.shiftKey) {
             event.preventDefault();
@@ -76,7 +72,7 @@ const NewMessage = (props) => {
             }
             dispatch({
                 type: ADD_MESSAGE,
-                value: [...data, new Message(newContent)],
+                value: [...data, new Message(test)],
             });
             setNewContent('');
             dispatch({ type: INIT_INPUT });

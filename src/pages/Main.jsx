@@ -12,7 +12,7 @@ const Main = () => {
                 <span>C</span>
                 <span>console.lo9</span>
             </Header>
-            <Wrapper>
+            <SectionRightWrapper>
                 <SideNav>
                     <span>Browse channels</span>
                     <span>Channels</span>
@@ -23,10 +23,11 @@ const Main = () => {
                     <ChannelHeader>
                         <span>General</span>
                     </ChannelHeader>
+
                     <Messages MsgBox={MsgBoxRef} />
                     <NewMessage MsgBox={MsgBoxRef} />
                 </MainWrapper>
-            </Wrapper>
+            </SectionRightWrapper>
         </MainContainer>
     );
 };
@@ -55,7 +56,7 @@ const Header = styled.div`
     }
 `;
 
-const Wrapper = styled.div`
+const SectionRightWrapper = styled.div`
     padding-left: 3%;
     display: flex;
     height: 100%;
