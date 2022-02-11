@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import Messages from 'components/Messages';
@@ -103,7 +103,7 @@ const SectionRightWrapper = styled.div`
 const SideNav = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 1 0 15%;
+    flex: 15;
     border-right: 1px solid #e3e4ea;
 `;
 
@@ -113,7 +113,7 @@ const MainWrapper = styled.div`
     align-items: flex-start;
     width: 100%;
     height: auto;
-    flex: 1 0 85%;
+    flex: 85;
     position: relative;
     background-color: #f8f8f8;
 
@@ -177,7 +177,7 @@ const SideMenuWrapper = styled.div`
     margin-bottom: 4px;
     padding: 0 4px;
     box-sizing: border-box;
-    background: #fff;
+    /* background: #fff; */
     z-index: 99;
 
     span {
