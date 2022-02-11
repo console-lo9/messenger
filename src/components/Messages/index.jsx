@@ -7,6 +7,7 @@ import MessageReply from './MessageReply';
 import { nanoid } from 'nanoid';
 
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Messages = (props) => {
     const data = useSelector((state) => state.message);

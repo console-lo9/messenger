@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from 'redux';
+import modal from './modal';
 
 export const FETCH = 'FETCH';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
@@ -56,7 +57,7 @@ const input = (state = inputInitialState, action) => {
     }
 };
 
-const rootReducer = combineReducers({ message, input });
+const rootReducer = combineReducers({ message, input, modal });
 const store = createStore(rootReducer);
 
 export default store;
