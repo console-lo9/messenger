@@ -34,7 +34,7 @@ const NewMessage = (props) => {
         //  submit하면 textarea 길이 초기화
         setScrollHeight(0);
         // submit하면 가장 아래로 스크롤
-        props.MsgBox.current.scrollTop({
+        props.MsgBox.current.scrollTo({
             top: props.MsgBox.current.scrollHeight,
         });
     };
@@ -56,29 +56,34 @@ const NewMessage = (props) => {
         } else if (typingContentLength === 0) {
             isTyping = false;
         }
-        props.scrollHeight(scrollHeight);
+
         return isTyping;
     };
 
     const keyDownHandler = (event) => {
         const typingContentLength = newContent.trim().length;
-        if (typingContentLength === 0) {
-            setNewContent('');
-            return;
-        }
-
         const targetKey = event.keyCode;
+
+        // if (typingContentLength === 0 && targetKey === 13) {
+        //     event.preventDefault();
+        //     return;
+        // }
+
         if (targetKey === 13 && !event.shiftKey) {
+            event.preventDefault();
+            if (typingContentLength === 0) {
+                return;
+            }
             dispatch({
                 type: ADD_MESSAGE,
                 value: [...data, new Message(newContent)],
             });
             setNewContent('');
             dispatch({ type: INIT_INPUT });
-            setScrollHeight();
+            setScrollHeight(0);
 
             props.MsgBox.current.scrollTo({
-                top: props.MsgBox.current.scrollHeight,
+                top: props.MsgBox.current.scrollHeight + 100,
             });
         }
     };

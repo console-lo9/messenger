@@ -8,10 +8,10 @@ export const UserFormBox = styled.div`
     align-items: center;
     background-color: #f8f8f8;
     margin: 20px auto 1.5%;
+    flex: 1;
 `;
 
 export const UserForm = styled.form`
-    /* margin: 20px 10px; */
     position: relative;
     display: flex;
     width: 100%;
@@ -47,7 +47,7 @@ export const SendButton = styled.button`
     position: absolute;
     bottom: 6px;
     right: 0;
-    width: 4%;
+    width: 5%;
     height: 36px;
     padding: 2px;
     border: 0;

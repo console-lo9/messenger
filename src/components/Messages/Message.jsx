@@ -32,6 +32,7 @@ const UserMsg = styled.li`
 const UserInfo = styled.div`
     display: flex;
     flex-direction: column;
+    white-space: pre-wrap;
     margin-left: 10px;
     > div {
         margin-bottom: 10px;

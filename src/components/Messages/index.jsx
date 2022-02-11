@@ -53,6 +53,9 @@ const Messages = (props) => {
 };
 
 const StyledMessages = styled.ul`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     width: 100%;
     height: 100%;
     overflow: auto;
