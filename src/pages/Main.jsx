@@ -2,9 +2,12 @@ import Messages from 'components/Messages';
 import NewMessage from 'components/NewMessage/NewMessage';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import Modal from 'components/Modal';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Main = () => {
     const MsgBoxRef = useRef();
+    const modal = useSelector((state) => state.modal);
 
     return (
         <MainContainer>
@@ -28,6 +31,7 @@ const Main = () => {
                     <NewMessage MsgBox={MsgBoxRef} />
                 </MainWrapper>
             </SectionRightWrapper>
+            {modal.openModal && <Modal title={modal.title} />}
         </MainContainer>
     );
 };

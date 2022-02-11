@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-export const FETCH = 'FETCT';
+export const FETCH = 'FETCH';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const REPLY_MESSAGE = 'REPLY_MESSAGE';
 export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
@@ -13,7 +13,7 @@ export const addMessage = (userId, userName, profileImage, content) => ({
     content,
 });
 export const replyMessage = () => ({ type: REPLY_MESSAGE });
-export const removeMessage = (date) => ({ type: REMOVE_MESSAGE, date });
+export const removeMessage = () => ({ type: REMOVE_MESSAGE });
 
 const initialState = [];
 
@@ -30,9 +30,6 @@ const messageReducer = (state = initialState, action) => {
                 content: action.content,
                 date: new Date(),
             });
-
-        case REMOVE_MESSAGE:
-            return state.filter((item) => item.date !== action.date);
         default:
             return state;
     }
