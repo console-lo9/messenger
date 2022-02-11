@@ -20,9 +20,10 @@ export const UserForm = styled.form`
 `;
 
 export const UserInput = styled.textarea`
-    padding-left: 10px;
+    padding: 10px;
     width: 100%;
-    border: 1px solid #c8c8cc;
+    border: 1px solid #e6e5e8;
+    border-radius: 2px;
     resize: none;
     overflow-y: hidden;
     line-height: 24px;
@@ -31,14 +32,16 @@ export const UserInput = styled.textarea`
     max-height: 230px;
     bottom: 0;
 
+    &::placeholder {
+        color: #dedee0;
+    }
     :hover {
-        box-shadow: 0 0 3px 2px #f00;
-        outline: 1px solid rgb(200, 200, 200);
+        border: 1px solid #b9babe;
     }
 
     :focus {
-        box-shadow: 0 0 3px 2px #f00;
-        outline: 1px solid #343434;
+        border: 1px solid #8c8e94;
+        outline: none;
     }
 `;
 
