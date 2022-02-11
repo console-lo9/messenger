@@ -16,6 +16,8 @@ const NewMessage = (props) => {
     const [newContent, setNewContent] = useState('');
     const [scrollHeight, setScrollHeight] = useState(48);
 
+    const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
+
     const submitHandler = (event) => {
         event.preventDefault();
 
@@ -25,7 +27,7 @@ const NewMessage = (props) => {
 
         dispatch({
             type: ADD_MESSAGE,
-            value: [...data, new Message(newContent)],
+            value: [...data, new Message(replacedContent)],
         });
 
         setNewContent('');
@@ -63,7 +65,6 @@ const NewMessage = (props) => {
     const keyDownHandler = (event) => {
         const typingContentLength = newContent.trim().length;
         const targetKey = event.keyCode;
-        const test = newContent.replace(/(^\s*)|(\s*$)/gi, '');
 
         if (targetKey === 13 && !event.shiftKey) {
             event.preventDefault();
@@ -72,7 +73,7 @@ const NewMessage = (props) => {
             }
             dispatch({
                 type: ADD_MESSAGE,
-                value: [...data, new Message(test)],
+                value: [...data, new Message(replacedContent)],
             });
             setNewContent('');
             dispatch({ type: INIT_INPUT });
