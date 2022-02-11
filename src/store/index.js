@@ -1,6 +1,5 @@
 import { createStore, combineReducers } from 'redux';
 import userReducer from './user';
-
 import modal from './modal';
 
 export const FETCH = 'FETCH';
@@ -59,7 +58,10 @@ const input = (state = inputInitialState, action) => {
     }
 };
 
+
 const rootReducer = combineReducers({ message, input, modal, userReducer });
+
+
 const store = createStore(rootReducer);
 
 export default store;

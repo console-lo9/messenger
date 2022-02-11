@@ -4,12 +4,17 @@ import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
 import { LOGIN, FETCH } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { Route, Routes } from 'react-router-dom';
 import Login from 'components/Login';
+
+import Modal from 'components/Modal';
+
 
 function App() {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.message);
+    const modal = useSelector((state) => state.modal);
 
     const fetchData = useFetch('http://localhost:4000/messages');
 
@@ -32,6 +37,7 @@ function App() {
     return (
         <Fragment>
             <GlobalStyle />
+
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/main" element={<Main />} />
