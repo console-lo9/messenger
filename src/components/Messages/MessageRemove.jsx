@@ -1,9 +1,10 @@
+import Button from 'layout/Button';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from 'store/modal';
 
 import styled from 'styled-components';
-
+import { MdDelete } from 'react-icons/md';
 const MessageRemove = (props) => {
     const dispatch = useDispatch();
     const modal = useSelector((state) => state.modal);
@@ -19,16 +20,14 @@ const MessageRemove = (props) => {
     };
 
     return (
-        <RemoveBtn
-            type="button"
-            value="삭제"
-            id={props.id}
-            name={props.date}
-            onClick={handleRemove}
-        />
+        <RemoveBtn id={props.id} name={props.date} onClick={handleRemove}>
+            <MdDelete />
+        </RemoveBtn>
     );
 };
 
-const RemoveBtn = styled.input``;
+const RemoveBtn = styled(Button)`
+    color: #b8babe;
+`;
 
 export default MessageRemove;

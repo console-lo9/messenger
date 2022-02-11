@@ -6,6 +6,9 @@ import Modal from 'components/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import star from 'assets/star-btn.png';
 import arrowDown from 'assets/arrow-down.png';
+import { FaChevronDown, FaCaretDown, FaCaretRight } from 'react-icons/fa';
+import { FiPlusCircle } from 'react-icons/fi';
+import { MdManageSearch } from 'react-icons/md';
 
 const Main = () => {
     const MsgBoxRef = useRef();
@@ -17,6 +20,7 @@ const Main = () => {
             <Header>
                 <span>C</span>
                 <span>console.lo9</span>
+                <FaChevronDown />
             </Header>
             <SectionRightWrapper>
                 <SideNav>
@@ -24,21 +28,23 @@ const Main = () => {
                         <SummaryBtn>
                             <i></i>
                             Browse channels
+                          <MdManageSearch />
+                        <span>Browse channels</span>
                         </SummaryBtn>
                     </div>
-
                     <SideMenuWrapper>
-                        <span>Channerls</span>
+                        <FaCaretDown />
+                        <span>Channels</span>
+                        <FiPlusCircle />
                     </SideMenuWrapper>
-
                     <SideMenuWrapper>
                         <span>General</span>
                     </SideMenuWrapper>
-
                     <SideMenuWrapper>
+                        <FaCaretRight />
                         <span>Direct messages</span>
+                        <FiPlusCircle />
                     </SideMenuWrapper>
-
                     <CurentUser>
                         <span>{currentUser} (me)</span>
                         <span></span>
@@ -76,13 +82,23 @@ const Header = styled.div`
 
     & > span:nth-child(1) {
         display: inline-block;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         color: #ffffff;
         background-color: #6011ba;
         border-radius: 5px;
         text-align: center;
+        line-height: 22px;
         margin-right: 5px;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    & > span:nth-child(2) {
+        font-weight: 600;
+        margin-right: 3px;
+    }
+    & > svg {
+        font-size: 0.8rem;
     }
     span {
         font-weight: 700;
@@ -97,10 +113,43 @@ const SectionRightWrapper = styled.div`
 `;
 
 const SideNav = styled.div`
-    display: flex;
     flex-direction: column;
+    display: flex;
     flex: 1 0 15%;
     border-right: 1px solid #e3e4ea;
+    font-size: 0.9rem;
+
+    & > div {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        margin: 10% 0;
+        & > svg {
+            opacity: 40%;
+            font-size: 1rem;
+            margin-right: 9px;
+        }
+    }
+
+    & > div:nth-child(1) {
+        font-weight: normal;
+        color: dodgerblue;
+        margin: 10% 0;
+
+        & > svg {
+            opacity: 100%;
+            font-size: 1.3rem;
+            margin-right: 4px;
+        }
+    }
+    & > span {
+        font-weight: 700;
+        margin-bottom: 10%;
+        background-color: #e6e6e8;
+        width: 95%;
+        padding: 5% 12%;
+        border-radius: 5px;
+    }
 `;
 
 const MainWrapper = styled.div`
