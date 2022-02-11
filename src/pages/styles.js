@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { COLOR } from 'utils/constants/styles';
 
 export const MainContainer = styled.div`
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 `;
 
 export const SectionRightWrapper = styled.div`
@@ -14,9 +14,9 @@ export const SectionRightWrapper = styled.div`
 `;
 
 export const MainWrapper = styled.div`
-    position: relative;
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: flex-start;
     flex: 4 0 0;
     width: 100%;

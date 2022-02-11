@@ -14,11 +14,18 @@ const Login = () => {
     const [userName, setUserName] = useState('');
 
     const userNameHandler = (e) => {
-        setUserName(e.target.value);
+        const currUserNameValue = e.target.value;
+
+        setUserName(currUserNameValue);
     };
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
+
+        if (userName.trim().length === 0) {
+            return alert('이름을 한 글자 이상 입력해주세요!');
+        }
+
         localStorage.setItem('userName', userName);
         dispatch(login(userName));
         navigate('/main');
