@@ -6,6 +6,7 @@ import { openModal } from 'store/action/modal';
 import { MdDelete } from 'react-icons/md';
 
 import styled from 'styled-components';
+import { COLOR } from 'utils/constants/styles';
 
 const MessageRemove = (props) => {
     const dispatch = useDispatch();
@@ -28,7 +29,6 @@ const MessageRemove = (props) => {
 };
 
 const RemoveBtn = styled(Button)`
-    color: #b8babe;
+    color: ${COLOR.HOVER_LIGHTGRAY};
 `;
-
 export default MessageRemove;

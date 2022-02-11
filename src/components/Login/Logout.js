@@ -1,25 +1,22 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { logout } from 'store/action/user';
+import { useNavigate } from 'react-router-dom';
+import * as S from './styles';
 
 const Logout = () => {
-    const user = useSelector((state) => state.user);
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        const currentUserName = localStorage.getItem('userName');
-
-        dispatch(logout(currentUserName));
         localStorage.clear();
+        navigate('/');
     };
+
     return (
-        <div>
+        <S.LogOutWrapper>
             <form onSubmit={onSubmitHandler}>
-                <button>로그아웃</button>
+                <S.LogOutBtn>로그아웃</S.LogOutBtn>
             </form>
-        </div>
+        </S.LogOutWrapper>
     );
 };
 

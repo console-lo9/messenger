@@ -1,13 +1,15 @@
 import Button from 'layout/Button';
 import styled, { css } from 'styled-components';
-
+import { COLOR } from 'utils/constants/styles';
 export const UserFormBox = styled.div`
+    position: relative;
     display: flex;
     width: 97%;
     align-items: center;
-    background-color: #f8f8f8;
+    background-color: ${COLOR.BACK_GROUND_GREY};
     margin: auto 1.5%;
     height: auto;
+    padding-bottom: 10px;
 `;
 
 export const UserForm = styled.form`
@@ -19,9 +21,10 @@ export const UserForm = styled.form`
 `;
 
 export const UserInput = styled.textarea`
+    position: absolute;
     padding: 10px;
     width: 100%;
-    border: 1px solid #e6e5e8;
+    border: 1px solid ${COLOR.INPUT_LIGHTGRAY};
     border-radius: 2px;
     resize: none;
     overflow-y: hidden;
@@ -35,28 +38,31 @@ export const UserInput = styled.textarea`
         color: #dedee0;
     }
     :hover {
-        border: 1px solid #b9babe;
+        border: 1px solid ${COLOR.HOVER_LIGHTGRAY};
     }
 
     :focus {
-        border: 1px solid #8c8e94;
+        border: 1px solid ${COLOR.FOCUS_GRAY};
         outline: none;
     }
 `;
-
+export const ButtonDiv = styled.div``;
 export const SendButton = styled(Button)`
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 5px;
-    background-color: ${({ isTyping }) => (isTyping ? '#2196F3' : '#e6e6e8')};
+    right: 0px;
+    bottom: 0px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.3rem;
+
+    background-color: ${({ isTyping }) =>
+        isTyping ? COLOR.BUTTON_BLUE : COLOR.INPUT_LIGHTGRAY};
     cursor: pointer;
-    color: #fff;
+    color: ${COLOR.WHITE};
     ${({ isTyping }) => {
         if (!isTyping) {
             return css`
                 &:hover {
-                    background-color: #e6e6e8;
+                    background-color: ${COLOR.INPUT_LIGHTGRAY};
                 }
             `;
         }

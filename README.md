@@ -4,9 +4,55 @@
 
 <p align="center"><img width="500" src="https://bit.ly/3HyINHE" /></p>
 
-## 프로젝트 소개
+# 프로젝트 소개
+
+> json-server 로 만든 가상의 서버에서 대화 목록을 가져와 대화 목록을 화면에 출력한 후
+> 대화에 참여한 사용자가 메시지를 전송할 수 있도록 하는 페이지 제작.
+
+<br/><br/>
 
 ## 팀원
+
+<table>
+  <tr>
+        </td>
+      <td align="center">
+      <a href="https://github.com/LEEHYUNHO2001"
+        ><img
+          src="https://avatars.githubusercontent.com/Ubermensch0608"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>우종원</b></sub></a>
+    <br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/hoonjoo-park"
+        ><img
+          src="https://avatars.githubusercontent.com/crucial-sub"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>박중섭</b></sub></a
+      ><br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/Yoon-CH"
+        ><img
+          src="https://avatars.githubusercontent.com/ttaerrim"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>이태림</b></sub></a
+      ><br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/devjoylee"
+        ><img
+          src="https://avatars.githubusercontent.com/penguin311"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>임수영</b></sub></a
+      ><br />
+  </tr>
+</table>
 
 |  이름  |                       Github                        | 담당 기능         |
 | :----: | :-------------------------------------------------: | :---------------- |
@@ -15,9 +61,18 @@
 | 이태림 |       [ttaerrim](https://github.com/ttaerrim)       | 메시지 답장 기능  |
 | 임수영 |     [penguin311](https://github.com/penguin311)     | 로그인, 유저 모델 |
 
+<br/>
+
 ## 스택
 
-`React` `javascript` `styled-components` `redux`
+<br/>
+
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+<img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black">
+<img src="https://img.shields.io/badge/styled-compontents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+
+<br/><br/>
 
 ## 설치
 
@@ -37,6 +92,8 @@ $ npm start || yarn start
 ⠀  http://localhost:3000/
 ⠀
 ```
+
+<br/>
 
 ## 의존성
 
@@ -61,6 +118,8 @@ $ npm start || yarn start
 }
 ```
 
+<br/>
+
 ## 파일 구조
 
     ├── public
@@ -82,6 +141,8 @@ $ npm start || yarn start
         ├── App.js
         ├── GlobalStyle.js
         └── index.js
+
+<br/>
 
 ## 구현 사항
 
@@ -105,13 +166,22 @@ $ npm start || yarn start
 -   [x] 로그인
     -   [x] 간단한 로그인 localStorage로 구현
 -   [x] 레이아웃
-    -   [x] 재사용 가능 Input Component
     -   [x] 재사용 가능 Button Component
 -   [x] **리덕스**를 통한 상태 관리
     -   [x] 메시지 데이터 모델, 현재 유저, 답장 input, 모달 창
+
+<br/>
 
 ## 스크린샷
 
 > 사진 더 넣을 거면 여기에
 
 ## 과제 후기
+
+### **우종원** 🍀
+
+### **박중섭** ✨
+
+### **이태림** 🐯
+
+### **임수영** 🐧
