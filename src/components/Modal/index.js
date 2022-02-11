@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { REMOVE_MESSAGE } from 'store/constants/reducer-constants';
-import { closeModal } from 'store/modal';
+import { REMOVE_MESSAGE } from 'store/action/types';
+import { closeModal } from 'store/action/modal';
 import styled from 'styled-components';
 import esc from 'assets/esc-large-nor.svg';
 import Button from 'layout/Button';
@@ -8,10 +8,12 @@ import Button from 'layout/Button';
 const Modal = ({ title }) => {
     const dispatch = useDispatch();
     const modal = useSelector((state) => state.modal);
-    const handleClose = () => {
+
+    const closeHandler = () => {
         dispatch(closeModal());
     };
-    const handleDelete = () => {
+
+    const deleteHanlder = () => {
         dispatch(closeModal());
         dispatch({
             type: REMOVE_MESSAGE,
@@ -28,18 +30,18 @@ const Modal = ({ title }) => {
                     <p>{modal.content} 메시지를 삭제하시겠습니까?</p>
                 </ModalContents>
                 <ModalFooter>
-                    <CancelButton size="medium" onClick={handleClose}>
+                    <CancelButton size="medium" onClick={closeHandler}>
                         취소
                     </CancelButton>
                     <DeleteButton
                         size="medium"
                         color="#a41300"
-                        onClick={handleDelete}
+                        onClick={deleteHanlder}
                     >
                         삭제
                     </DeleteButton>
                 </ModalFooter>
-                <CloseButton onClick={handleClose} />
+                <CloseButton onClick={closeHandler} />
             </DialogBlock>
         </DarkBackground>
     );

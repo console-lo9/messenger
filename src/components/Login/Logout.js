@@ -1,18 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { LOGOUT } from 'store/user';
+import { logout } from 'store/action/user';
 
 const Logout = () => {
-    const state = useSelector((state) => state.userReducer);
+    const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        dispatch({
-            type: LOGOUT,
-            value: localStorage.getItem('userName'),
-        });
+        const currentUserName = localStorage.getItem('userName');
+
+        dispatch(logout(currentUserName));
         localStorage.clear();
     };
     return (

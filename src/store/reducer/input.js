@@ -1,4 +1,4 @@
-import { INIT_INPUT, REPLY_INPUT } from './constants/reducer-constants';
+import { INIT_INPUT, REPLY_INPUT } from 'store/action/types';
 
 const inputInitialState = '';
 
@@ -12,5 +12,4 @@ const input = (state = inputInitialState, action) => {
             return state;
     }
 };
-
 export default input;

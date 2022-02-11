@@ -1,15 +1,16 @@
-import Button from 'layout/Button';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { openModal } from 'store/modal';
+import { useDispatch } from 'react-redux';
+
+import Button from 'layout/Button';
+import { openModal } from 'store/action/modal';
+import { MdDelete } from 'react-icons/md';
 
 import styled from 'styled-components';
-import { MdDelete } from 'react-icons/md';
+
 const MessageRemove = (props) => {
     const dispatch = useDispatch();
-    const modal = useSelector((state) => state.modal);
 
-    const handleRemove = (event) => {
+    const removeHandler = (event) => {
         const targetId = event.target.id;
         let targetContent = props.content;
 
@@ -20,7 +21,7 @@ const MessageRemove = (props) => {
     };
 
     return (
-        <RemoveBtn id={props.id} name={props.date} onClick={handleRemove}>
+        <RemoveBtn id={props.id} name={props.date} onClick={removeHandler}>
             <MdDelete />
         </RemoveBtn>
     );

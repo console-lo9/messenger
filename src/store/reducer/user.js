@@ -1,9 +1,8 @@
-export const LOGIN = 'LOGIN';
-export const LOGOUT = 'LOGOUT';
+import { LOGIN, LOGOUT } from 'store/action/types';
 
 const currentUser = '';
 
-const userReducer = (state = currentUser, action) => {
+const user = (state = currentUser, action) => {
     switch (action.type) {
         case LOGIN:
             return action.userName;
@@ -14,4 +13,4 @@ const userReducer = (state = currentUser, action) => {
     }
 };
 
-export default userReducer;
+export default user;

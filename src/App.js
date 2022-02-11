@@ -2,7 +2,7 @@ import useFetch from 'hooks/useFetch';
 import { Fragment, useEffect } from 'react';
 import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
-import { LOGIN, FETCH } from 'store/constants/reducer-constants';
+import { LOGIN, FETCH } from 'store/action/types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Route, Routes } from 'react-router-dom';

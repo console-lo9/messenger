@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { LOGIN } from 'store/user';
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+import { login } from 'store/action/user';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -17,10 +17,8 @@ const Login = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         localStorage.setItem('userName', userName);
-        dispatch({
-            type: LOGIN,
-            userName,
-        });
+
+        dispatch(login(userName));
 
         navigate('/main');
     };

@@ -46,7 +46,16 @@ export const SendButton = styled(Button)`
     position: absolute;
     bottom: 6px;
     right: 5px;
-    background-color: ${(props) => (props.isTyping ? '#2196F3' : '#e6e6e8')};
+    background-color: ${({ isTyping }) => (isTyping ? '#2196F3' : '#e6e6e8')};
     cursor: pointer;
     color: #fff;
+    ${({ isTyping }) => {
+        if (!isTyping) {
+            return css`
+                &:hover {
+                    background-color: #e6e6e8;
+                }
+            `;
+        }
+    }}
 `;
