@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from 'assets/logo-small.svg';
-
 import { login } from 'store/action/user';
 
 const Login = () => {

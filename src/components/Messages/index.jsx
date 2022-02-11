@@ -3,9 +3,7 @@ import Message from './Message';
 import MessageRemove from './MessageRemove';
 import MessageReply from './MessageReply';
 import { nanoid } from 'nanoid';
-
 import * as S from './styles';
-
 const Messages = (props) => {
     const messageData = useSelector((state) => state.message);
 

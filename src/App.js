@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Route, Routes } from 'react-router-dom';
 import Login from 'components/Login';
-
 function App() {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.message);
