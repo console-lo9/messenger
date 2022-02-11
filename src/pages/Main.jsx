@@ -1,13 +1,7 @@
 import React, { Fragment, useRef } from 'react';
-import { useSelector } from 'react-redux';
 
 import Messages from 'components/Messages';
-import Modal from 'components/Modal';
 import NewMessage from 'components/NewMessage/NewMessage';
-
-import arrowDown from 'assets/arrow-down.png';
-import star from 'assets/star-btn.png';
-
 import styled from 'styled-components';
 import Modal from 'components/Modal';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,8 +28,8 @@ const Main = () => {
                         <SummaryBtn>
                             <i></i>
                             Browse channels
-                          <MdManageSearch />
-                        <span>Browse channels</span>
+                            <MdManageSearch />
+                            <span>Browse channels</span>
                         </SummaryBtn>
                     </div>
                     <SideMenuWrapper>
@@ -191,7 +185,7 @@ const ChannelHeader = styled.div`
     background-color: #fff;
     font-weight: 700;
     font-size: 16px;
-    `
+`;
 const Logo = styled.span`
     display: flex;
     justify-content: space-between;
