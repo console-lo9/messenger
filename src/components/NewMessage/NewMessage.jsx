@@ -1,3 +1,4 @@
+import Button from 'layout/Button';
 import { Message } from 'models/message';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +10,7 @@ import {
     UserFormBox,
     UserInput,
 } from './styled-new-message';
-
+import { FiSend } from 'react-icons/fi';
 const NewMessage = (props) => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
@@ -112,8 +113,13 @@ const NewMessage = (props) => {
                     scrollHeight={scrollHeight}
                     ref={inputRef}
                 />
-                <SendButton type="submit" isTyping={typingCheckHandler()}>
-                    보내기
+                <SendButton
+                    type="submit"
+                    isTyping={typingCheckHandler()}
+                    color="#478bff"
+                    size="mediumSquare"
+                >
+                    <FiSend />
                 </SendButton>
             </UserForm>
         </UserFormBox>

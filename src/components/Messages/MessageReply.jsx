@@ -5,9 +5,13 @@ import { replyInput } from 'store';
 
 import styled from 'styled-components';
 
+import Button from 'layout/Button';
+
+import { MdReply } from 'react-icons/md';
 const MessageReply = ({ id }) => {
     const data = useSelector((state) => state.message);
     const dispatch = useDispatch();
+    console.log(data);
     const handleReply = (event) => {
         const selectMessage = data.filter(
             (item) => item.commentId === event.target.id
@@ -16,12 +20,14 @@ const MessageReply = ({ id }) => {
         dispatch(replyInput(input));
     };
     return (
-        <ReplyBtn type="button" value="답장" id={id} onClick={handleReply} />
+        <ReplyBtn id={id} onClick={handleReply}>
+            <MdReply />
+        </ReplyBtn>
     );
 };
 
-const ReplyBtn = styled.input`
-    margin-right: 5px;
+const ReplyBtn = styled(Button)`
+    color: #b8babe;
 `;
 
 export default MessageReply;
