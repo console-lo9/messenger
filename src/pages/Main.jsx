@@ -1,12 +1,9 @@
-import React, { Fragment, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
-
 import Messages from 'components/Messages';
 import NewMessage from 'components/NewMessage/NewMessage';
-
 import arrowDown from 'assets/arrow-down.png';
 import star from 'assets/star-btn.png';
-
 import styled from 'styled-components';
 import Modal from 'components/Modal';
 import { FaChevronDown, FaCaretDown, FaCaretRight } from 'react-icons/fa';
