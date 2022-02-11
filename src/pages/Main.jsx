@@ -9,6 +9,7 @@ import Modal from 'components/Modal';
 import { FaChevronDown, FaCaretDown, FaCaretRight } from 'react-icons/fa';
 import { MdManageSearch } from 'react-icons/md';
 import { HiPlus } from 'react-icons/hi';
+import Logout from 'components/Login/Logout';
 
 const Main = () => {
     const MsgBoxRef = useRef();
@@ -21,6 +22,7 @@ const Main = () => {
                 <Logo>C</Logo>
                 <UnderLineMenu>console.lo9</UnderLineMenu>
                 <FaChevronDown style={{ cursor: 'pointer' }} />
+                <Logout />
             </Header>
             <SectionRightWrapper>
                 <SideNav>
