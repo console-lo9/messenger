@@ -1,9 +1,11 @@
-import Messages from 'components/Messages';
-import NewMessage from 'components/NewMessage/NewMessage';
 import React, { useRef } from 'react';
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+
+import Messages from 'components/Messages';
 import Modal from 'components/Modal';
-import { useDispatch, useSelector } from 'react-redux';
+import NewMessage from 'components/NewMessage/NewMessage';
+
+import styled from 'styled-components';
 
 const Main = () => {
     const MsgBoxRef = useRef();

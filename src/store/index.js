@@ -1,14 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import userReducer from './user';
 import modal from './modal';
+import { ADD_MESSAGE, REMOVE_MESSAGE, REPLY_MESSAGE } from './message';
+import { FETCH, INIT_INPUT, REPLY_INPUT } from './constants/reducer-constants';
 
-export const FETCH = 'FETCH';
-export const ADD_MESSAGE = 'ADD_MESSAGE';
-export const REPLY_MESSAGE = 'REPLY_MESSAGE';
-export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
-
-export const REPLY_INPUT = 'REPLY_INPUT';
-export const INIT_INPUT = 'INIT_INPUT';
+import input from './inputReducer';
 
 export const addMessage = (userId, userName, profileImage, content) => ({
     type: ADD_MESSAGE,
@@ -17,6 +13,7 @@ export const addMessage = (userId, userName, profileImage, content) => ({
     profileImage,
     content,
 });
+
 export const replyMessage = () => ({ type: REPLY_MESSAGE });
 export const removeMessage = (date) => ({ type: REMOVE_MESSAGE, date });
 
@@ -45,22 +42,7 @@ export const initInput = () => ({
     type: INIT_INPUT,
 });
 
-const inputInitialState = '';
-
-const input = (state = inputInitialState, action) => {
-    switch (action.type) {
-        case REPLY_INPUT:
-            return (state = action.input);
-        case INIT_INPUT:
-            return '';
-        default:
-            return state;
-    }
-};
-
-
 const rootReducer = combineReducers({ message, input, modal, userReducer });
-
 
 const store = createStore(rootReducer);
 

@@ -2,7 +2,7 @@ import { Message } from 'models/message';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { initInput } from 'store';
-import { ADD_MESSAGE, INIT_INPUT } from 'store';
+import { ADD_MESSAGE, INIT_INPUT } from 'store/constants/reducer-constants';
 import {
     SendButton,
     UserForm,
@@ -14,14 +14,12 @@ const NewMessage = (props) => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
     const input = useSelector((state) => state.input);
+    const currentUser = useSelector((state) => state.userReducer);
     const [newContent, setNewContent] = useState('');
     const [scrollHeight, setScrollHeight] = useState(48);
     const inputRef = useRef();
 
     const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
-    const loggedInUser = localStorage.getItem('userName');
-
-    const currentUser = useSelector((state) => state.userReducer);
 
     const submitHandler = (event) => {
         event.preventDefault();

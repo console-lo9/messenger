@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { REMOVE_MESSAGE } from 'store';
+import { REMOVE_MESSAGE } from 'store/constants/reducer-constants';
 import { closeModal } from 'store/modal';
 import styled from 'styled-components';
 import esc from 'assets/esc-large-nor.svg';

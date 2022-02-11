@@ -1,7 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { replyInput } from 'store';
+
 import styled from 'styled-components';
 
 const MessageReply = ({ id }) => {
@@ -13,7 +14,6 @@ const MessageReply = ({ id }) => {
         )[0];
         const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
         dispatch(replyInput(input));
-        console.log(input);
     };
     return (
         <ReplyBtn type="button" value="답장" id={id} onClick={handleReply} />

@@ -2,19 +2,15 @@ import useFetch from 'hooks/useFetch';
 import { Fragment, useEffect } from 'react';
 import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
-import { LOGIN, FETCH } from 'store';
+import { LOGIN, FETCH } from 'store/constants/reducer-constants';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Route, Routes } from 'react-router-dom';
 import Login from 'components/Login';
 
-import Modal from 'components/Modal';
-
-
 function App() {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.message);
-    const modal = useSelector((state) => state.modal);
 
     const fetchData = useFetch('http://localhost:4000/messages');
 
@@ -22,7 +18,7 @@ function App() {
 
     useEffect(() => {
         dispatch({
-            type: 'LOGIN',
+            type: LOGIN,
             userName: userName,
         });
 

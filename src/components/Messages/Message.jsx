@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import MessageRemove from './MessageRemove';
 import { useSelector } from 'react-redux';
+
+import styled from 'styled-components';
 
 const Message = (props) => {
     const currentUser = useSelector((state) => state.userReducer);

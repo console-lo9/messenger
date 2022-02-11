@@ -3,15 +3,12 @@ import { useSelector } from 'react-redux';
 import Message from './Message';
 import MessageRemove from './MessageRemove';
 import MessageReply from './MessageReply';
-
 import { nanoid } from 'nanoid';
 
 import styled from 'styled-components';
-import { useEffect } from 'react';
 
 const Messages = (props) => {
     const data = useSelector((state) => state.message);
-    console.log(data);
 
     return (
         <StyledMessages ref={props.MsgBox}>
