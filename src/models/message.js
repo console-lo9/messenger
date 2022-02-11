@@ -6,7 +6,7 @@ export class Message {
         this.userId = userName;
         this.commentId = nanoid();
         this.userName = userName;
-        this.profileImage = 'https://bit.ly/3GHB3BK'; 
+        this.profileImage = 'https://bit.ly/3GHB3BK';
         this.content = newContent;
         this.date = getDate(new Date());
     }
