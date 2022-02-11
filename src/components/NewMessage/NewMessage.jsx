@@ -1,46 +1,39 @@
-import Button from 'layout/Button';
-import { Message } from 'models/message';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { initInput } from 'store';
-import { ADD_MESSAGE, INIT_INPUT } from 'store';
-import {
-    SendButton,
-    UserForm,
-    UserFormBox,
-    UserInput,
-} from './styled-new-message';
+
+import { initInput } from 'store/action/input';
+import { addMessage } from 'store/action/message';
+import { Message } from 'models/message';
 import { FiSend } from 'react-icons/fi';
-const NewMessage = (props) => {
+
+import * as S from './styles';
+
+const NewMessage = ({ MsgBox }) => {
     const dispatch = useDispatch();
-    const data = useSelector((state) => state.message);
-    const input = useSelector((state) => state.input);
+    const messageData = useSelector((state) => state.message);
+    const replyInput = useSelector((state) => state.input);
+    const currentUser = useSelector((state) => state.user);
     const [newContent, setNewContent] = useState('');
     const [scrollHeight, setScrollHeight] = useState(48);
     const inputRef = useRef();
 
     const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
-    const loggedInUser = localStorage.getItem('userName');
-
-    const currentUser = useSelector((state) => state.userReducer);
+    const trimedContent = newContent.trim().length;
 
     const submitHandler = (event) => {
         event.preventDefault();
-        if (newContent.trim().length === 0) {
+        if (trimedContent === 0) {
             return;
         }
 
-        dispatch({
-            type: ADD_MESSAGE,
-            value: [...data, new Message(currentUser, newContent)],
-        });
+        dispatch(addMessage(new Message(currentUser, replacedContent)));
+        dispatch(initInput());
 
         setNewContent('');
-        dispatch(initInput());
         setScrollHeight(0);
     };
 
-    const getCurrentHandler = (event) => {
+    const getCurrentContentHandler = (event) => {
         const typingContent = event.target.value;
         const currScrollHeight = event.target.scrollHeight;
 
@@ -49,82 +42,71 @@ const NewMessage = (props) => {
     };
 
     const typingCheckHandler = () => {
-        const typingContentLength = newContent.trim().length;
-        let isTyping;
-
-        if (typingContentLength > 0) {
-            isTyping = true;
-        } else if (typingContentLength === 0) {
-            isTyping = false;
-        }
+        const typingContentLength = trimedContent;
+        const isTyping = typingContentLength > 0 ? true : false;
 
         return isTyping;
     };
 
     const keyDownHandler = (event) => {
-        const typingContentLength = newContent.trim().length;
+        const typingContentLength = trimedContent;
         const targetKey = event.keyCode;
 
         if (targetKey === 13 && !event.shiftKey) {
             event.preventDefault();
-            if (typingContentLength === 0) {
+            if (!typingContentLength) {
                 return;
             }
-            dispatch({
-                type: ADD_MESSAGE,
-                value: [...data, new Message(currentUser, replacedContent)],
-            });
-            setNewContent('');
-            dispatch({ type: INIT_INPUT });
-            setScrollHeight(0);
+            dispatch(addMessage(new Message(currentUser, replacedContent)));
+            dispatch(initInput());
 
-            props.MsgBox.current.scrollTo({
-                top: props.MsgBox.current.scrollHeight + 100,
-            });
+            setNewContent('');
+            setScrollHeight(0);
         }
     };
+
     const scrollHandler = () => {
-        props.MsgBox.current.scrollTo({
-            top: props.MsgBox.current.scrollHeight,
+        MsgBox.current.scrollTo({
+            top: MsgBox.current.scrollHeight,
         });
     };
 
     useEffect(() => {
         scrollHandler();
-    }, [data, scrollHeight]);
+    }, [messageData, scrollHeight]);
 
     useEffect(() => {
-        if (input !== '') {
-            setNewContent(input);
+        if (replyInput) {
+            setNewContent(replyInput);
             setScrollHeight(96);
             inputRef.current.focus();
         }
-    }, [input]);
+    }, [replyInput]);
 
     return (
-        <UserFormBox>
-            <UserForm onSubmit={submitHandler}>
+        <S.UserFormBox>
+            <S.UserForm onSubmit={submitHandler}>
                 <label htmlFor="newMSG"></label>
-                <UserInput
+                <S.UserInput
                     id="newMSG"
                     type="text"
                     value={newContent}
-                    onChange={getCurrentHandler}
+                    onChange={getCurrentContentHandler}
                     onKeyDown={keyDownHandler}
                     placeholder="Enter message"
                     scrollHeight={scrollHeight}
                     ref={inputRef}
                 />
-                <SendButton
+                <S.SendButton
                     type="submit"
                     isTyping={typingCheckHandler()}
                     color="#478bff"
                     size="mediumSquare"
                 >
                     <FiSend />
-                </SendButton>
-            </UserForm>
-        </UserFormBox>
+                </S.SendButton>
+            </S.UserForm>
+        </S.UserFormBox>
     );
 };
 
