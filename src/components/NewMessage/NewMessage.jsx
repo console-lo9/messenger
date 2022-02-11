@@ -89,14 +89,15 @@ const NewMessage = (props) => {
         });
     };
     useEffect(() => {
+        scrollHandler();
+    }, [data, scrollHeight]);
+    useEffect(() => {
         if (input !== '') {
             setNewContent(input);
             setScrollHeight(96);
             inputRef.current.focus();
         }
-        scrollHandler();
-    }, [input, data, scrollHeight]);
-
+    }, [input]);
     return (
         <UserFormBox>
             <UserForm onSubmit={submitHandler}>
