@@ -5,7 +5,6 @@ import { initInput } from 'store/action/input';
 import { addMessage } from 'store/action/message';
 import { Message } from 'models/message';
 import { FiSend } from 'react-icons/fi';
-import { INIT_INPUT } from 'store/action/types';
 
 import * as S from './styles';
 
@@ -59,7 +58,7 @@ const NewMessage = ({ MsgBox }) => {
                 return;
             }
             dispatch(addMessage(new Message(currentUser, replacedContent)));
-            dispatch({ type: INIT_INPUT });
+            dispatch(initInput());
 
             setNewContent('');
             setScrollHeight(0);
