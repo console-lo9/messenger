@@ -1,22 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Message from './Message';
 import MessageRemove from './MessageRemove';
+import MessageReply from './MessageReply';
+
 import { nanoid } from 'nanoid';
-import { replyInput } from 'store';
 
 import styled from 'styled-components';
 
 const Messages = (props) => {
-    const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
-    const handleReply = (event) => {
-        const selectMessage = data.filter(
-            (item) => item.commentId === event.target.id
-        )[0];
-        const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
-        dispatch(replyInput(input));
-    };
 
     return (
         <StyledMessages ref={props.MsgBox}>
@@ -33,13 +26,7 @@ const Messages = (props) => {
                             {item.userName}
                         </Message>
                         <ButtonBox className="button_box">
-                            <ReplyButton
-                                className="reply_div"
-                                onClick={handleReply}
-                                id={item.commentId}
-                                type="button"
-                                value="답장"
-                            />
+                            <MessageReply id={item.commentId} />
                             <MessageRemove
                                 id={item.commentId}
                                 content={item.content}
@@ -53,10 +40,10 @@ const Messages = (props) => {
 
 const StyledMessages = styled.ul`
     width: 100%;
-    height: 100%;
+    height: 90%;
     overflow: auto;
     background-color: #f8f8f8;
-    padding-bottom: 60px;
+    flex: 1 1 0;
 `;
 
 const MessageDiv = styled.div`
@@ -84,10 +71,6 @@ const ButtonBox = styled.div`
         border: none;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
     }
-`;
-
-const ReplyButton = styled.input`
-    margin-right: 5px;
 `;
 
 export default Messages;

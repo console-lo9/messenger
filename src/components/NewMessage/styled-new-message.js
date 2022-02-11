@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const UserFormBox = styled.div`
-    position: relative;
     display: flex;
     width: 97%;
-    height: 100px;
     align-items: center;
     background-color: #f8f8f8;
-    margin: 20px auto 1.5%;
+    margin: 0 auto 1.5%;
+    margin-top: 10px;
+    height: auto;
 `;
 
 export const UserForm = styled.form`
@@ -19,15 +19,14 @@ export const UserForm = styled.form`
 `;
 
 export const UserInput = styled.textarea`
-    position: absolute;
     padding-left: 10px;
     width: 100%;
     border: 1px solid #c8c8cc;
     resize: none;
     overflow-y: hidden;
     line-height: 24px;
-    height: ${({ scrollHeight }) =>
-        scrollHeight > 48 ? scrollHeight + 'px' : 48 + 'px'};
+    height: ${(props) =>
+        props.scrollHeight > 48 ? props.scrollHeight + 'px' : 48 + 'px'};
     max-height: 230px;
     bottom: 0;
 
@@ -46,17 +45,17 @@ export const SendButton = styled.button`
     position: absolute;
     bottom: 6px;
     right: 0;
-    width: 5%;
+    width: 4%;
     height: 36px;
     padding: 2px;
     border: 0;
     border-radius: 2px;
-    background-color: ${({ isTyping }) => (isTyping ? '#2196F3' : '#e6e6e8')};
+    background-color: ${(props) => (props.isTyping ? '#2196F3' : '#e6e6e8')};
     margin-right: 6px;
     cursor: pointer;
     color: #fff;
 
     :hover {
-        background-color: ${({ isTyping }) => isTyping && '#55f'};
+        background-color: ${(props) => props.isTyping && '#55f'};
     }
 `;

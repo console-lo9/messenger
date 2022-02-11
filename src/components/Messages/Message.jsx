@@ -37,6 +37,7 @@ const UserInfo = styled.div`
     > div {
         margin-bottom: 10px;
     }
+    white-space: pre-wrap;
 `;
 
 const ProfileImage = styled.img`

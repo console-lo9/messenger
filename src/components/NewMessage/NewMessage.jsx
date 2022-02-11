@@ -1,6 +1,7 @@
 import { Message } from 'models/message';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { initInput } from 'store';
 import { ADD_MESSAGE, INIT_INPUT } from 'store';
 import {
     SendButton,
@@ -31,14 +32,11 @@ const NewMessage = (props) => {
         });
 
         setNewContent('');
-        dispatch({ type: INIT_INPUT });
+        dispatch(initInput());
+        // dispatch({ type: INIT_INPUT });
 
         //  submit하면 textarea 길이 초기화
         setScrollHeight(0);
-        // submit하면 가장 아래로 스크롤
-        props.MsgBox.current.scrollTo({
-            top: props.MsgBox.current.scrollHeight,
-        });
     };
 
     const getCurrentHandler = (event) => {
@@ -84,12 +82,17 @@ const NewMessage = (props) => {
             });
         }
     };
-
+    const scrollHandler = () => {
+        props.MsgBox.current.scrollTo({
+            top: props.MsgBox.current.scrollHeight,
+        });
+    };
     useEffect(() => {
         if (input !== '') {
             setNewContent(input);
         }
-    }, [input]);
+        scrollHandler();
+    }, [input, data, scrollHeight]);
 
     return (
         <UserFormBox>
