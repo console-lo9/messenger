@@ -4,7 +4,6 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Modal from 'components/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { FaChevronDown, FaCaretDown, FaCaretRight } from 'react-icons/fa';
 import { FiPlusCircle } from 'react-icons/fi';
 import { MdManageSearch } from 'react-icons/md';
