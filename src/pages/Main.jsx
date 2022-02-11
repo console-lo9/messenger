@@ -9,6 +9,7 @@ import arrowDown from 'assets/arrow-down.png';
 import { FaChevronDown, FaCaretDown, FaCaretRight } from 'react-icons/fa';
 import { FiPlusCircle } from 'react-icons/fi';
 import { MdManageSearch } from 'react-icons/md';
+import { HiPlus } from 'react-icons/hi';
 
 const Main = () => {
     const MsgBoxRef = useRef();
@@ -24,18 +25,14 @@ const Main = () => {
             </Header>
             <SectionRightWrapper>
                 <SideNav>
-                    <div>
-                        <SummaryBtn>
-                            <i></i>
-                            Browse channels
-                          <MdManageSearch />
+                    <SummaryBtn>
+                        <MdManageSearch />
                         <span>Browse channels</span>
-                        </SummaryBtn>
-                    </div>
+                    </SummaryBtn>
                     <SideMenuWrapper>
                         <FaCaretDown />
                         <span>Channels</span>
-                        <FiPlusCircle />
+                        <HiPlus />
                     </SideMenuWrapper>
                     <SideMenuWrapper>
                         <span>General</span>
@@ -43,7 +40,7 @@ const Main = () => {
                     <SideMenuWrapper>
                         <FaCaretRight />
                         <span>Direct messages</span>
-                        <FiPlusCircle />
+                        <HiPlus />
                     </SideMenuWrapper>
                     <CurentUser>
                         <span>{currentUser} (me)</span>
@@ -106,7 +103,6 @@ const Header = styled.div`
 `;
 
 const SectionRightWrapper = styled.div`
-    padding-left: 3%;
     display: flex;
     height: 100%;
     width: 100%;
@@ -115,41 +111,9 @@ const SectionRightWrapper = styled.div`
 const SideNav = styled.div`
     flex-direction: column;
     display: flex;
-    flex: 1 0 15%;
+    flex: 1 0 0;
     border-right: 1px solid #e3e4ea;
     font-size: 0.9rem;
-
-    & > div {
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        margin: 10% 0;
-        & > svg {
-            opacity: 40%;
-            font-size: 1rem;
-            margin-right: 9px;
-        }
-    }
-
-    & > div:nth-child(1) {
-        font-weight: normal;
-        color: dodgerblue;
-        margin: 10% 0;
-
-        & > svg {
-            opacity: 100%;
-            font-size: 1.3rem;
-            margin-right: 4px;
-        }
-    }
-    & > span {
-        font-weight: 700;
-        margin-bottom: 10%;
-        background-color: #e6e6e8;
-        width: 95%;
-        padding: 5% 12%;
-        border-radius: 5px;
-    }
 `;
 
 const MainWrapper = styled.div`
@@ -158,7 +122,7 @@ const MainWrapper = styled.div`
     align-items: flex-start;
     width: 100%;
     height: auto;
-    flex: 1 0 85%;
+    flex: 4 0 0;
     position: relative;
     background-color: #f8f8f8;
 
@@ -187,10 +151,9 @@ const ChannelHeader = styled.div`
 const SummaryBtn = styled.button`
     display: flex;
     align-items: center;
-    width: 240px;
-    height: 30px;
-    margin: 20px 10px 12px;
-    padding: 0;
+    height: 25px;
+    padding: 5% 2%;
+    margin: 10% 5%;
     color: #478bff;
     font-size: 14px;
     font-weight: 400;
@@ -200,24 +163,52 @@ const SummaryBtn = styled.button`
     box-sizing: border-box;
     text-decoration: none;
     cursor: pointer;
+    &:hover {
+        background-color: #e4e4e4c0;
+    }
+    & > svg {
+        opacity: 100%;
+        font-size: 1.3rem;
+        margin-right: 4px;
+    }
 `;
 const SideMenuWrapper = styled.div`
     display: flex;
-
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
-    justify-content: space-between;
     align-items: center;
-    height: 40px;
-    margin-bottom: 4px;
-    padding: 0 4px;
-    box-sizing: border-box;
-    background: #fff;
-    z-index: 99;
+    font-weight: 700;
+    padding: 3% 7px;
+    margin: 0 5% 3%;
+    position: relative;
 
-    span {
-        font-weight: 700;
+    &:nth-child(3) {
+        padding: 3% 32px;
+        margin-bottom: 10%;
+        background-color: #e6e6e8;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    & > svg:nth-child(1) {
+        opacity: 40%;
+        font-size: 1rem;
+        margin-right: 9px;
+        cursor: pointer;
+    }
+    & > svg:nth-child(3) {
+        opacity: 40%;
+        background-color: #d4d0d0;
+        font-size: 1.2rem;
+        padding: 2px;
+        border-radius: 9999px;
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        &:hover {
+            opacity: 100%;
+        }
+    }
+    & > span {
+        cursor: pointer;
     }
 `;
 
@@ -236,6 +227,13 @@ const ArrowIcon = styled.img`
 const CurentUser = styled.div`
     display: flex;
     align-items: center;
+    padding: 0 28px;
+    margin: 0 5%;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e4e4e4c0;
+    }
 
     & > span:nth-child(1) {
         min-width: 0;
@@ -248,6 +246,7 @@ const CurentUser = styled.div`
         white-space: nowrap;
         color: #8b8e95;
     }
+
     & > span:nth-child(2) {
         margin-left: 6px;
         background: #8ac917;
