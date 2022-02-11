@@ -9,7 +9,7 @@ const Main = () => {
     return (
         <MainContainer>
             <Header>
-                <span>C</span>
+                <Logo>C</Logo>
                 <span>console.lo9</span>
             </Header>
             <SectionRightWrapper>
@@ -44,10 +44,11 @@ const Header = styled.div`
     align-items: center;
     padding-left: 3%;
     border-bottom: 1px solid #e3e4ea;
+    justify-content: center;
     & > span:nth-child(1) {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
+        display: flex;
+        width: 25px;
+        height: 25px;
         color: #ffffff;
         background-color: #6011ba;
         border-radius: 5px;
@@ -96,6 +97,15 @@ const ChannelHeader = styled.div`
     border-bottom: 1px solid #e3e4ea;
     display: flex;
     align-items: center;
+`;
+
+const Logo = styled.span`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
 `;
 
 export default Main;
