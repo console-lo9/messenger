@@ -2,22 +2,41 @@ import Messages from 'components/Messages';
 import NewMessage from 'components/NewMessage/NewMessage';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import Modal from 'components/Modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { FaChevronDown, FaCaretDown, FaCaretRight } from 'react-icons/fa';
+import { FiPlusCircle } from 'react-icons/fi';
+import { MdManageSearch } from 'react-icons/md';
 
 const Main = () => {
     const MsgBoxRef = useRef();
+    const modal = useSelector((state) => state.modal);
 
     return (
         <MainContainer>
             <Header>
                 <span>C</span>
                 <span>console.lo9</span>
+                <FaChevronDown />
             </Header>
             <SectionRightWrapper>
                 <SideNav>
-                    <span>Browse channels</span>
-                    <span>Channels</span>
+                    <div>
+                        <MdManageSearch />
+                        <span>Browse channels</span>
+                    </div>
+                    <div>
+                        <FaCaretDown />
+                        <span>Channels</span>
+                        <FiPlusCircle />
+                    </div>
                     <span>General</span>
-                    <span>Direct messages</span>
+                    <div>
+                        <FaCaretRight />
+                        <span>Direct messages</span>
+                        <FiPlusCircle />
+                    </div>
                 </SideNav>
                 <MainWrapper>
                     <ChannelHeader>
@@ -28,6 +47,7 @@ const Main = () => {
                     <NewMessage MsgBox={MsgBoxRef} />
                 </MainWrapper>
             </SectionRightWrapper>
+            {modal.openModal && <Modal title={modal.title} />}
         </MainContainer>
     );
 };
@@ -46,13 +66,23 @@ const Header = styled.div`
     border-bottom: 1px solid #e3e4ea;
     & > span:nth-child(1) {
         display: inline-block;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         color: #ffffff;
         background-color: #6011ba;
         border-radius: 5px;
         text-align: center;
+        line-height: 22px;
         margin-right: 5px;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    & > span:nth-child(2) {
+        font-weight: 600;
+        margin-right: 3px;
+    }
+    & > svg {
+        font-size: 0.8rem;
     }
 `;
 
@@ -67,7 +97,40 @@ const SideNav = styled.div`
     flex-direction: column;
     display: flex;
     flex: 1 0 15%;
-    border-right: 1px solid #e3e4ea; ;
+    border-right: 1px solid #e3e4ea;
+    font-size: 0.9rem;
+
+    & > div {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        margin: 10% 0;
+        & > svg {
+            opacity: 40%;
+            font-size: 1rem;
+            margin-right: 9px;
+        }
+    }
+
+    & > div:nth-child(1) {
+        font-weight: normal;
+        color: dodgerblue;
+        margin: 10% 0;
+
+        & > svg {
+            opacity: 100%;
+            font-size: 1.3rem;
+            margin-right: 4px;
+        }
+    }
+    & > span {
+        font-weight: 700;
+        margin-bottom: 10%;
+        background-color: #e6e6e8;
+        width: 95%;
+        padding: 5% 12%;
+        border-radius: 5px;
+    }
 `;
 
 const MainWrapper = styled.div`

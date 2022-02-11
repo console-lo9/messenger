@@ -1,3 +1,4 @@
+import Button from 'layout/Button';
 import { Message } from 'models/message';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +10,7 @@ import {
     UserFormBox,
     UserInput,
 } from './styled-new-message';
-
+import { FiSend } from 'react-icons/fi';
 const NewMessage = (props) => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
@@ -19,24 +20,23 @@ const NewMessage = (props) => {
     const inputRef = useRef();
 
     const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
+    const loggedInUser = localStorage.getItem('userName');
+
+    const currentUser = useSelector((state) => state.userReducer);
 
     const submitHandler = (event) => {
         event.preventDefault();
-
         if (newContent.trim().length === 0) {
             return;
         }
 
         dispatch({
             type: ADD_MESSAGE,
-            value: [...data, new Message(replacedContent)],
+            value: [...data, new Message(currentUser, newContent)],
         });
 
         setNewContent('');
         dispatch(initInput());
-        // dispatch({ type: INIT_INPUT });
-
-        //  submit하면 textarea 길이 초기화
         setScrollHeight(0);
     };
 
@@ -72,7 +72,7 @@ const NewMessage = (props) => {
             }
             dispatch({
                 type: ADD_MESSAGE,
-                value: [...data, new Message(replacedContent)],
+                value: [...data, new Message(currentUser, replacedContent)],
             });
             setNewContent('');
             dispatch({ type: INIT_INPUT });
@@ -88,9 +88,11 @@ const NewMessage = (props) => {
             top: props.MsgBox.current.scrollHeight,
         });
     };
+
     useEffect(() => {
         scrollHandler();
     }, [data, scrollHeight]);
+
     useEffect(() => {
         if (input !== '') {
             setNewContent(input);
@@ -98,6 +100,7 @@ const NewMessage = (props) => {
             inputRef.current.focus();
         }
     }, [input]);
+
     return (
         <UserFormBox>
             <UserForm onSubmit={submitHandler}>
@@ -112,8 +115,13 @@ const NewMessage = (props) => {
                     scrollHeight={scrollHeight}
                     ref={inputRef}
                 />
-                <SendButton type="submit" isTyping={typingCheckHandler()}>
-                    보내기
+                <SendButton
+                    type="submit"
+                    isTyping={typingCheckHandler()}
+                    color="#478bff"
+                    size="mediumSquare"
+                >
+                    <FiSend />
                 </SendButton>
             </UserForm>
         </UserFormBox>
