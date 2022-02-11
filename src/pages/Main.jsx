@@ -64,8 +64,8 @@ const SectionRightWrapper = styled.div`
 `;
 
 const SideNav = styled.div`
-    display: flex;
     flex-direction: column;
+    display: flex;
     flex: 1 0 15%;
     border-right: 1px solid #e3e4ea; ;
 `;
