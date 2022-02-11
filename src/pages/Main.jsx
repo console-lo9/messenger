@@ -10,6 +10,7 @@ import arrowDown from 'assets/arrow-down.png';
 const Main = () => {
     const MsgBoxRef = useRef();
     const modal = useSelector((state) => state.modal);
+    const currentUser = localStorage.getItem('userName');
 
     return (
         <MainContainer>
@@ -37,6 +38,11 @@ const Main = () => {
                     <SideMenuWrapper>
                         <span>Direct messages</span>
                     </SideMenuWrapper>
+
+                    <CurentUser>
+                        <span>{currentUser} (me)</span>
+                        <span></span>
+                    </CurentUser>
                 </SideNav>
                 <MainWrapper>
                     <ChannelHeader>
@@ -148,6 +154,7 @@ const SummaryBtn = styled.button`
 `;
 const SideMenuWrapper = styled.div`
     display: flex;
+
     position: -webkit-sticky;
     position: sticky;
     top: -1px;
@@ -175,5 +182,31 @@ const ArrowIcon = styled.img`
     width: 11px;
     height: 7px;
     margin: 10px;
+`;
+
+const CurentUser = styled.div`
+    display: flex;
+    align-items: center;
+
+    & > span:nth-child(1) {
+        min-width: 0;
+        padding-left: 5px;
+        font-size: 14px;
+        vertical-align: middle;
+        line-height: 36px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #8b8e95;
+    }
+    & > span:nth-child(2) {
+        margin-left: 6px;
+        background: #8ac917;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
 `;
 export default Main;
