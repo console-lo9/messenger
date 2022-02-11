@@ -1,6 +1,7 @@
 import { Message } from 'models/message';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { initInput } from 'store';
 import { ADD_MESSAGE, INIT_INPUT } from 'store';
 import styled from 'styled-components';
 
@@ -24,14 +25,11 @@ const NewMessage = (props) => {
         });
 
         setNewContent('');
-        dispatch({ type: INIT_INPUT });
+        dispatch(initInput());
+        // dispatch({ type: INIT_INPUT });
 
         //  submit하면 textarea 길이 초기화
         setScrollHeight(0);
-        // submit하면 가장 아래로 스크롤
-        props.MsgBox.current.scrollTo({
-            top: props.MsgBox.current.scrollHeight,
-        });
     };
 
     const getCurrentHandler = (event) => {
@@ -67,18 +65,19 @@ const NewMessage = (props) => {
             setNewContent('');
             dispatch({ type: INIT_INPUT });
             setScrollHeight(0);
-
-            props.MsgBox.current.scrollTo({
-                top: props.MsgBox.current.scrollHeight,
-            });
         }
     };
-
+    const scrollHandler = () => {
+        props.MsgBox.current.scrollTo({
+            top: props.MsgBox.current.scrollHeight,
+        });
+    };
     useEffect(() => {
         if (input !== '') {
             setNewContent(input);
         }
-    }, [input]);
+        scrollHandler();
+    }, [input, data, scrollHeight]);
     console.log(scrollHeight);
     return (
         <UserFormBox>
@@ -102,17 +101,16 @@ const NewMessage = (props) => {
 };
 
 const UserFormBox = styled.div`
-    position: relative;
     display: flex;
     width: 97%;
-    height: 100px;
     align-items: center;
     background-color: #f8f8f8;
     margin: 0 auto 1.5%;
+    margin-top: 10px;
+    height: auto;
 `;
 
 const UserForm = styled.form`
-    /* margin: 20px 10px; */
     position: relative;
     display: flex;
     width: 100%;
@@ -121,7 +119,6 @@ const UserForm = styled.form`
 `;
 
 const UserInput = styled.textarea`
-    position: absolute;
     padding-left: 10px;
     width: 100%;
     border: 1px solid #c8c8cc;

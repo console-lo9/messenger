@@ -1,15 +1,12 @@
 import { nanoid } from 'nanoid';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Message from './Message';
 import MessageRemove from './MessageRemove';
-import { replyInput } from 'store';
-import styled from 'styled-components';
-import { useRef } from 'react';
 import MessageReply from './MessageReply';
+import styled from 'styled-components';
 
 const Messages = (props) => {
-    const dispatch = useDispatch();
     const data = useSelector((state) => state.message);
 
     return (
@@ -42,9 +39,10 @@ const Messages = (props) => {
 
 const StyledMessages = styled.ul`
     width: 100%;
-    height: 100%;
+    height: 90%;
     overflow: auto;
-    background-color: #f8f8f8; ;
+    background-color: #f8f8f8;
+    flex: 1 1 0;
 `;
 
 const MessageDiv = styled.div`
