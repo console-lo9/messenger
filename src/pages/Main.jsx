@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import Messages from 'components/Messages';
@@ -16,50 +16,52 @@ const Main = () => {
     const currentUser = localStorage.getItem('userName');
 
     return (
-        <MainContainer>
-            <Header>
-                <Logo>C</Logo>
-                <span>console.lo9</span>
-            </Header>
-            <SectionRightWrapper>
-                <SideNav>
-                    <div>
-                        <SummaryBtn>
-                            <i></i>
-                            Browse channels
-                        </SummaryBtn>
-                    </div>
+        <Fragment>
+            <MainContainer>
+                <Header>
+                    <Logo>C</Logo>
+                    <span>console.lo9</span>
+                </Header>
+                <SectionRightWrapper>
+                    <SideNav>
+                        <div>
+                            <SummaryBtn>
+                                <i></i>
+                                Browse channels
+                            </SummaryBtn>
+                        </div>
 
-                    <SideMenuWrapper>
-                        <span>Channerls</span>
-                    </SideMenuWrapper>
+                        <SideMenuWrapper>
+                            <span>Channerls</span>
+                        </SideMenuWrapper>
 
-                    <SideMenuWrapper>
-                        <span>General</span>
-                    </SideMenuWrapper>
+                        <SideMenuWrapper>
+                            <span>General</span>
+                        </SideMenuWrapper>
 
-                    <SideMenuWrapper>
-                        <span>Direct messages</span>
-                    </SideMenuWrapper>
+                        <SideMenuWrapper>
+                            <span>Direct messages</span>
+                        </SideMenuWrapper>
 
-                    <CurentUser>
-                        <span>{currentUser} (me)</span>
-                        <span></span>
-                    </CurentUser>
-                </SideNav>
-                <MainWrapper>
-                    <ChannelHeader>
-                        <StarIcon src={star}></StarIcon>
-                        <span>General</span>
-                        <ArrowIcon src={arrowDown}></ArrowIcon>
-                    </ChannelHeader>
+                        <CurentUser>
+                            <span>{currentUser} (me)</span>
+                            <span></span>
+                        </CurentUser>
+                    </SideNav>
+                    <MainWrapper>
+                        <ChannelHeader>
+                            <StarIcon src={star}></StarIcon>
+                            <span>General</span>
+                            <ArrowIcon src={arrowDown}></ArrowIcon>
+                        </ChannelHeader>
 
-                    <Messages MsgBox={MsgBoxRef} />
-                    <NewMessage MsgBox={MsgBoxRef} />
-                </MainWrapper>
-            </SectionRightWrapper>
+                        <Messages MsgBox={MsgBoxRef} />
+                        <NewMessage MsgBox={MsgBoxRef} />
+                    </MainWrapper>
+                </SectionRightWrapper>
+            </MainContainer>
             {modal.openModal && <Modal title={modal.title} />}
-        </MainContainer>
+        </Fragment>
     );
 };
 
@@ -177,7 +179,7 @@ const SideMenuWrapper = styled.div`
     margin-bottom: 4px;
     padding: 0 4px;
     box-sizing: border-box;
-    background: #fff;
+    /* background: #fff; */
     z-index: 99;
 
     span {
