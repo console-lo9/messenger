@@ -20,6 +20,9 @@ const NewMessage = (props) => {
 
     const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
 
+    const currentUser = useSelector((state) => state.userReducer);
+    console.log('현재 유저', currentUser);
+
     const submitHandler = (event) => {
         event.preventDefault();
 
@@ -29,7 +32,7 @@ const NewMessage = (props) => {
 
         dispatch({
             type: ADD_MESSAGE,
-            value: [...data, new Message(replacedContent)],
+            value: [...data, new Message(currentUser, newContent)],
         });
 
         setNewContent('');

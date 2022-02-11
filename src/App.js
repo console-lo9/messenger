@@ -4,6 +4,8 @@ import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
 import { FETCH } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import Login from 'components/Login';
 
 function App() {
     const dispatch = useDispatch();
@@ -24,7 +26,10 @@ function App() {
     return (
         <Fragment>
             <GlobalStyle />
-            <Main />
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/main" element={<Main />} />
+            </Routes>
         </Fragment>
     );
 }
