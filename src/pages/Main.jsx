@@ -5,6 +5,9 @@ import styled from 'styled-components';
 
 const Main = () => {
     const MsgBox = useRef();
+    const getScrollHeightHandler = (e) => {
+        console.log(e);
+    };
 
     return (
         <MainContainer>
@@ -24,7 +27,10 @@ const Main = () => {
                         <span>General</span>
                     </ChannelHeader>
                     <Messages MsgBox={MsgBox} />
-                    <NewMessage MsgBox={MsgBox} />
+                    <NewMessage
+                        MsgBox={MsgBox}
+                        scrollHeight={getScrollHeightHandler}
+                    />
                 </MainWrapper>
             </Wrapper>
         </MainContainer>

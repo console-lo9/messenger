@@ -1,11 +1,12 @@
-import { nanoid } from 'nanoid';
-
 import { useDispatch, useSelector } from 'react-redux';
+
 import Message from './Message';
 import MessageRemove from './MessageRemove';
+import { nanoid } from 'nanoid';
 import { replyInput } from 'store';
+
 import styled from 'styled-components';
-import { useRef } from 'react';
+import NewMessage from 'components/NewMessage/NewMessage';
 
 const Messages = (props) => {
     const dispatch = useDispatch();
@@ -45,7 +46,6 @@ const Messages = (props) => {
                                 content={item.content}
                             />
                         </ButtonBox>
-                        <hr />
                     </MessageDiv>
                 ))}
         </StyledMessages>
@@ -56,7 +56,8 @@ const StyledMessages = styled.ul`
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #f8f8f8; ;
+    background-color: #f8f8f8;
+    padding-bottom: 60px;
 `;
 
 const MessageDiv = styled.div`
