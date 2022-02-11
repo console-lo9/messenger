@@ -3,7 +3,7 @@ import { darken } from 'polished';
 
 const Button = ({ children, id, color, size, ...rest }) => {
     return (
-        <StyledButton id={id} color={color} size={size} {...rest}>
+        <StyledButton type="button" id={id} color={color} size={size} {...rest}>
             {children}
         </StyledButton>
     );
@@ -73,6 +73,10 @@ const StyledButton = styled.button`
 
     & + & {
         margin-left: 0.5rem;
+    }
+
+    svg {
+        pointer-events: none;
     }
 `;
 Button.defaultProps = {

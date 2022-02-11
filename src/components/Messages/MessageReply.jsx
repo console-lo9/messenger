@@ -10,6 +10,7 @@ import { MdReply } from 'react-icons/md';
 const MessageReply = ({ id }) => {
     const data = useSelector((state) => state.message);
     const dispatch = useDispatch();
+    console.log(data);
     const handleReply = (event) => {
         const selectMessage = data.filter(
             (item) => item.commentId === event.target.id

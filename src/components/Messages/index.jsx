@@ -11,6 +11,7 @@ import styled from 'styled-components';
 const Messages = (props) => {
     const data = useSelector((state) => state.message);
     console.log(data);
+
     return (
         <StyledMessages ref={props.MsgBox}>
             {data &&
