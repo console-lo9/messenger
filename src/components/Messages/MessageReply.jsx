@@ -6,11 +6,12 @@ import { MdReply } from 'react-icons/md';
 
 import Button from 'layout/Button';
 
+import { COLOR } from 'utils/constants/styles';
 import styled from 'styled-components';
 
 const MessageReply = ({ id }) => {
-    const messageData = useSelector((state) => state.message);
     const dispatch = useDispatch();
+    const messageData = useSelector((state) => state.message);
 
     const replyHandler = (event) => {
         const selectMessage = messageData.filter(
@@ -29,7 +30,7 @@ const MessageReply = ({ id }) => {
 };
 
 const ReplyBtn = styled(Button)`
-    color: #b8babe;
+    color: ${COLOR.HOVER_LIGHTGRAY};
 `;
 
 export default MessageReply;

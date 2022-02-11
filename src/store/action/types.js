@@ -1,5 +1,4 @@
 export const LOGIN = 'LOGIN';
-export const LOGOUT = 'LOGOUT';
 
 export const FETCH = 'FETCH';
 export const ADD_MESSAGE = 'ADD_MESSAGE';

@@ -10,15 +10,15 @@ const Message = (props) => {
         <S.UserMsg>
             <S.ProfileImage src={props.profileImage} />
             <S.UserInfo>
-                <div>
+                <S.UserInfoDiv>
                     {currentUser === props.userName ? (
                         <S.UserName>{props.userName} *</S.UserName>
                     ) : (
                         <S.UserName>{props.userName}</S.UserName>
                     )}
 
-                    <S.TimeStamp> {props.date}</S.TimeStamp>
-                </div>
+                    <S.DateSpan> {props.date}</S.DateSpan>
+                </S.UserInfoDiv>
                 <div>{props.content}</div>
             </S.UserInfo>
         </S.UserMsg>
