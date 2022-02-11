@@ -16,7 +16,6 @@ const MessageReply = ({ id }) => {
         )[0];
         const input = `${selectMessage.userName}\n${selectMessage.content}\n(회신)\n`;
         dispatch(replyInput(input));
-        console.log(input);
     };
     return (
         <ReplyBtn id={id} onClick={handleReply}>

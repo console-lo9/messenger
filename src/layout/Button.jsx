@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { darken, lighten } from 'polished';
+import { darken } from 'polished';
 
-const Button = ({ children, color, size, ...rest }) => {
+const Button = ({ children, id, color, size, ...rest }) => {
     return (
-        <StyledButton color={color} size={size} {...rest}>
+        <StyledButton id={id} color={color} size={size} {...rest}>
             {children}
         </StyledButton>
     );
@@ -11,7 +11,6 @@ const Button = ({ children, color, size, ...rest }) => {
 
 const sizes = {
     medium: {
-        // height: '2.25rem',
         height: '2.25rem',
         width: '2.25rem',
         fontSize: '1rem',
