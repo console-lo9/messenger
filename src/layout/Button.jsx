@@ -10,15 +10,20 @@ const Button = ({ children, id, color, size, ...rest }) => {
 };
 
 const sizes = {
-    medium: {
+    mediumSquare: {
         height: '2.25rem',
         width: '2.25rem',
         fontSize: '1rem',
     },
-    small: {
+    smallSquare: {
         height: '1.75rem',
         width: '1.75rem',
         fontSize: '1rem',
+    },
+    medium: {
+        height: '2rem',
+        width: '4.5rem',
+        fontSize: '0.75rem',
     },
 };
 const sizeStyles = css`
@@ -81,7 +86,7 @@ const StyledButton = styled.button`
 `;
 Button.defaultProps = {
     color: '#ffffff',
-    size: 'small',
+    size: 'smallSquare',
 };
 
 export default Button;

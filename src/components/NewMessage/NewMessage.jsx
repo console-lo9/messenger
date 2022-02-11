@@ -119,7 +119,7 @@ const NewMessage = (props) => {
                     type="submit"
                     isTyping={typingCheckHandler()}
                     color="#478bff"
-                    size="medium"
+                    size="mediumSquare"
                 >
                     <FiSend />
                 </SendButton>
