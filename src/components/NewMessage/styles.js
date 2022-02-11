@@ -6,8 +6,7 @@ export const UserFormBox = styled.div`
     width: 97%;
     align-items: center;
     background-color: #f8f8f8;
-    margin: 0 auto 1.5%;
-    margin-top: 10px;
+    margin: auto 1.5%;
     height: auto;
 `;
 
@@ -47,7 +46,8 @@ export const UserInput = styled.textarea`
 
 export const SendButton = styled(Button)`
     position: absolute;
-    bottom: 6px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 5px;
     background-color: ${({ isTyping }) => (isTyping ? '#2196F3' : '#e6e6e8')};
     cursor: pointer;
