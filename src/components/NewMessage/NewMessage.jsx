@@ -19,13 +19,12 @@ const NewMessage = (props) => {
     const inputRef = useRef();
 
     const replacedContent = newContent.replace(/(^\s*)|(\s*$)/gi, '');
+    const loggedInUser = localStorage.getItem('userName');
 
     const currentUser = useSelector((state) => state.userReducer);
-    console.log('현재 유저', currentUser);
 
     const submitHandler = (event) => {
         event.preventDefault();
-
         if (newContent.trim().length === 0) {
             return;
         }
@@ -37,9 +36,6 @@ const NewMessage = (props) => {
 
         setNewContent('');
         dispatch(initInput());
-        // dispatch({ type: INIT_INPUT });
-
-        //  submit하면 textarea 길이 초기화
         setScrollHeight(0);
     };
 
@@ -75,7 +71,7 @@ const NewMessage = (props) => {
             }
             dispatch({
                 type: ADD_MESSAGE,
-                value: [...data, new Message(replacedContent)],
+                value: [...data, new Message(currentUser, replacedContent)],
             });
             setNewContent('');
             dispatch({ type: INIT_INPUT });
@@ -91,9 +87,11 @@ const NewMessage = (props) => {
             top: props.MsgBox.current.scrollHeight,
         });
     };
+
     useEffect(() => {
         scrollHandler();
     }, [data, scrollHeight]);
+
     useEffect(() => {
         if (input !== '') {
             setNewContent(input);
@@ -101,6 +99,7 @@ const NewMessage = (props) => {
             inputRef.current.focus();
         }
     }, [input]);
+
     return (
         <UserFormBox>
             <UserForm onSubmit={submitHandler}>

@@ -2,7 +2,7 @@ import useFetch from 'hooks/useFetch';
 import { Fragment, useEffect } from 'react';
 import GlobalStyle from './GlobalStyle';
 import Main from 'pages/Main';
-import { FETCH } from 'store';
+import { LOGIN, FETCH } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Login from 'components/Login';
@@ -13,7 +13,14 @@ function App() {
 
     const fetchData = useFetch('http://localhost:4000/messages');
 
+    const userName = localStorage.getItem('userName');
+
     useEffect(() => {
+        dispatch({
+            type: 'LOGIN',
+            userName: userName,
+        });
+
         if (fetchData) {
             dispatch({
                 type: FETCH,
@@ -21,7 +28,6 @@ function App() {
             });
         }
     }, [fetchData]);
-
     if (!state) return <div>로딩중</div>;
     return (
         <Fragment>

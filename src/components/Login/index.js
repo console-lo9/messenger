@@ -1,12 +1,8 @@
 import { useState } from 'react';
-
-import Logout from './Logout';
-import Main from 'pages/Main';
-import { LOGIN, LOGOUT, REGIST } from 'store/user';
+import { LOGIN } from 'store/user';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { nanoid } from 'nanoid';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -21,19 +17,11 @@ const Login = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         localStorage.setItem('userName', userName);
-        // const registUser = {
-        //     userId: nanoid(),
-        //     userName: userName,
-        //     profileImage: '',
-        // };
-        // dispatch({
-        //     type: REGIST,
-        //     value: registUser,
-        // });
         dispatch({
             type: LOGIN,
             userName,
         });
+
         navigate('/main');
     };
 
