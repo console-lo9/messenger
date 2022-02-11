@@ -19,8 +19,8 @@ const Main = () => {
         <MainContainer>
             <Header>
                 <Logo>C</Logo>
-                <span>console.lo9</span>
-                <FaChevronDown />
+                <UnderLineMenu>console.lo9</UnderLineMenu>
+                <FaChevronDown style={{ cursor: 'pointer' }} />
             </Header>
             <SectionRightWrapper>
                 <SideNav>
@@ -30,7 +30,7 @@ const Main = () => {
                     </SummaryBtn>
                     <SideMenuWrapper>
                         <FaCaretDown />
-                        <span>Channels</span>
+                        <UnderLineMenu>Channels</UnderLineMenu>
                         <HiPlus />
                     </SideMenuWrapper>
                     <SideMenuWrapper>
@@ -38,7 +38,7 @@ const Main = () => {
                     </SideMenuWrapper>
                     <SideMenuWrapper>
                         <FaCaretRight />
-                        <span>Direct messages</span>
+                        <UnderLineMenu>Direct messages</UnderLineMenu>
                         <HiPlus />
                     </SideMenuWrapper>
                     <CurentUser>
@@ -49,8 +49,11 @@ const Main = () => {
                 <MainWrapper>
                     <ChannelHeader>
                         <StarIcon src={star}></StarIcon>
-                        <span>General</span>
-                        <ArrowIcon src={arrowDown}></ArrowIcon>
+                        <UnderLineMenu>General</UnderLineMenu>
+                        <ArrowIcon
+                            src={arrowDown}
+                            style={{ cursor: 'pointer' }}
+                        ></ArrowIcon>
                     </ChannelHeader>
 
                     <Messages MsgBox={MsgBoxRef} />
@@ -156,6 +159,14 @@ const Logo = styled.span`
     padding: 4px;
     width: 20px;
     height: 20px;
+    cursor: pointer;
+`;
+
+const UnderLineMenu = styled.span`
+    cursor: pointer;
+    :hover {
+        text-decoration: underline;
+    }
 `;
 
 const SummaryBtn = styled.button`

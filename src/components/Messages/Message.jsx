@@ -17,7 +17,7 @@ const Message = (props) => {
                         <S.UserName>{props.userName}</S.UserName>
                     )}
 
-                    <span> {props.date}</span>
+                    <S.TimeStamp> {props.date}</S.TimeStamp>
                 </div>
                 <div>{props.content}</div>
             </S.UserInfo>

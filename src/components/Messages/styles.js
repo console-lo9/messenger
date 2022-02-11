@@ -65,9 +65,16 @@ export const ProfileImage = styled.img`
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
 `;
 
 export const UserName = styled.span`
     font-weight: 700;
     margin-right: 10px;
+    cursor: pointer;
+`;
+
+export const TimeStamp = styled.span`
+    color: #8b8e95;
+    font-size: 12px;
 `;

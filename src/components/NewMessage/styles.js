@@ -8,6 +8,7 @@ export const UserFormBox = styled.div`
     background-color: #f8f8f8;
     margin: auto 1.5%;
     height: auto;
+    margin-bottom: 20px;
 `;
 
 export const UserForm = styled.form`
