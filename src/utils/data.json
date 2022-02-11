@@ -2,6 +2,7 @@
     "messages": [
         {
             "userId": "pikachu",
+            "commentId": "fssfdfsd",
             "userName": "피카츄",
             "profileImage": "https://bit.ly/3rGsJOg",
             "content": "안녕 나는 피카츄야",
@@ -9,6 +10,7 @@
         },
         {
             "userId": "lion",
+            "commentId": "sdfsdfsd",
             "userName": "라이언",
             "profileImage": "https://bit.ly/3oGCQAT",
             "content": "나는 라이언",
@@ -16,13 +18,15 @@
         },
         {
             "userId": "mario",
+            "commentId": "sdfaghdhdg",
             "userName": "마리오",
-            "profileImage": "https://bit.ly/3Jny9nH",
+            "profileImage": "https://bit.ly/3uCqc9W",
             "content": "나는 마~ 리오라고 해!",
             "date": "2022-02-10 08:02:03"
         },
         {
             "userId": "pikachu",
+            "commentId": "jkhjkljkl",
             "userName": "피카츄",
             "profileImage": "https://bit.ly/3rGsJOg",
             "content": "만나서 반가워",
@@ -30,8 +34,9 @@
         },
         {
             "userId": "mario",
+            "commentId": "asdaETWT",
             "userName": "마리오",
-            "profileImage": "https://bit.ly/3Jny9nH",
+            "profileImage": "https://bit.ly/3uCqc9W",
             "content": "잘 부탁해",
             "date": "2022-02-10 10:02:53"
         }
