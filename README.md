@@ -9,82 +9,82 @@
 > json-server 로 만든 가상의 서버에서 대화 목록을 가져와 대화 목록을 화면에 출력한 후
 > 대화에 참여한 사용자가 메시지를 전송할 수 있도록 하는 페이지 제작.
 
-<br/><br/>
+
+<br/>
 
 ## 🙋‍♀️🙋‍♂️ 팀원
 
-<br/>
 
 <table>
 <thead>
 <tr>
-<th>프로필</th>
-<th>이름</th>
-<th>Github</th>
-<th>담당 기능</th>
+<th><p align="center">프로필</p></th>
+<th><p>이름</p></th>
+<th><p>담당 기능</p></th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/Ubermensch0608"
-><img
+<img
 src="https://avatars.githubusercontent.com/Ubermensch0608"
 width="100px;"
 alt=""
-/></a>
+/>
 </td>
-<td><b>우종원</b></sub></td>
-<td align="center"><a href="https://github.com/Ubermensch0608" >Ubermensch0608</a></td>
+<td><b><a href="https://github.com/Ubermensch0608"
+>우종원</a></b></sub></td>
 <td>메시지 데이터 동적 관리, 메시지 입력 기능, 전역상태 관리</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://github.com/crucial-sub"
-><img
+<img
 src="https://avatars.githubusercontent.com/crucial-sub"
 width="100px;"
 alt=""
-/></a>
+/>
 </td>
-<td><b>박중섭</b></td>
-  <td align="center"><a href="https://github.com/crucial-sub" >crucial-sub</a></td>
+<td><b><a href="https://github.com/crucial-sub"
+>박중섭</a></b>
 <td>메시지 삭제 기능, 메인 페이지 해더 및 좌측네브바</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://github.com/ttaerrim"
-><img
+<img
 src="https://avatars.githubusercontent.com/ttaerrim"
 width="100px;"
 alt=""
-/></a
-></td>
-<td align="center"><b>이태림</b></td>
-  <td align="center"><a href="https://github.com/ttaerrim" >ttaerrim</a></td>
+/></td>
+<td><a href="https://github.com/ttaerrim" >이태림</a></td>
 <td>메시지 답장 기능, 전역 상태 관리</td>
 </tr>
 
 <tr>
 <td align="center">
-<a href="https://github.com/penguin311"
-><img
+<img
 src="https://avatars.githubusercontent.com/penguin311"
 width="100px;"
 alt=""
-/><br /></a
-></td>
-<td><b>임수영</b></td>
-<td align="center"><a href="https://github.com/penguin311" >penguin311</a></td>
+/><br /></td>
+<td><b><a href="https://github.com/penguin311"
+>임수영</a></b></td>
 <td>로그인&아웃, 유저 모델, 메인 페이지 스타일링</td>
 </tr>
 </tbody>
 </table>
 
-<br/><br/>
+<br/>
+
+## 🚀 스택
+
+<br/>
+
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/styled-compontents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+
+<br/>
 
 ## ⚙ 설치
 
@@ -203,15 +203,7 @@ $ npm run start:dev || yarn start:dev
 
  <img src='https://user-images.githubusercontent.com/93258739/153691138-ae9da50d-ad2b-46bb-afdd-efe0debc3717.gif' alt="gif" />
 
->
-
-## 🚀 스택
-
-<br/>
-
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/styled-compontents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
-
-<br/><br/>
+> <br/>
 
 ## 💡 과제 후기
 

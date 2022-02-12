@@ -11,7 +11,7 @@ function App() {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.message);
 
-    const fetchData = useFetch('http://localhost:4000/messages');
+    const fetchData = useFetch('/messages');
 
     const userName = localStorage.getItem('userName');
 
