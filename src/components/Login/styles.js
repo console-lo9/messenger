@@ -38,26 +38,29 @@ export const SubmitForm = styled.form`
     color: ${COLOR.SWIT_RED};
     background: ${COLOR.LIGHTER_GREY};
     box-shadow: 0 8px 10px ${COLOR.SHADOW_BLACK};
+    padding: 40px auto;
 `;
 
-export const Label = styled.h1`
-    padding: 20px;
-`;
+export const Label = styled.h1``;
 
 export const Input = styled.input`
     display: block;
     width: 50%;
     font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    margin-bottom: 20px;
-    border: {
-        none
-        bottom:  1px solid ${COLOR.LINE_BLACK};
+    padding: 10px;
+    margin: 50px auto;
+    border: none;
+    border-radius: 3px;
+
+    :focus {
+        border-bottom: 1px solid ${COLOR.LINE_BLACK};
     }
 `;
 
 export const JoinBtn = styled.button`
-    margin-bottom: 2rem;
+    color: ${COLOR.DEEP_DARK_GREY};
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
 `;
 
 export const LogOutBtn = styled.button`

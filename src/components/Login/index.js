@@ -38,7 +38,7 @@ const Login = () => {
             </S.Header>
             <S.SubtminContainer>
                 <S.SubmitForm onSubmit={onSubmitHandler}>
-                    <S.Label>Join ! </S.Label>
+                    <S.Label>Join Your Team !</S.Label>
                     <S.Input
                         placeholder="이름을 입력해주세요"
                         value={userName}
