@@ -1,6 +1,6 @@
 <h1 align="center"> 메신저 과제 </h1>
 
-<h3 align="center"> 서비스 링크: https://fervent-tereshkova-9b041a.netlify.app/</h3>
+<h3 align="center"> 서비스 링크: https://console-lo9-messenger.herokuapp.com</h3>
 
 <p align="center"><img width="800" src="https://user-images.githubusercontent.com/93258739/153689576-dd79fe3d-2f67-4657-848e-937f8c231880.jpg" /></p>
 
