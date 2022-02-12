@@ -82,6 +82,7 @@ export const CurrentUser = styled.div`
 
     &:hover {
         background-color: ${COLOR.HOVER_GRAY};
+        border-radius: 2px;
     }
 
     & > span:nth-child(1) {
