@@ -65,7 +65,6 @@ export const ProfileImage = styled.img`
 
 export const UserInfoDiv = styled.div`
     display: flex;
-    justify-content: center;
     align-items: center;
 `;
 export const UserName = styled.span`
