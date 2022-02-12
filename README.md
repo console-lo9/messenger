@@ -14,6 +14,75 @@
 ## 🙋‍♀️🙋‍♂️ 팀원
 
 <table>
+<thead>
+<tr>
+<td>프로필</td>
+<td>이름</td>
+<td>Github</td>
+<td>담당 기능</td>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/Ubermensch0608"
+><img
+src="https://avatars.githubusercontent.com/Ubermensch0608"
+width="100px;"
+alt=""
+/></a>
+</td>
+<td><b>우종원</b></sub></td>
+<td><a href="https://github.com/Ubermensch0608" >Ubermensch0608</a></td>
+<td>메시지 데이터 동적 관리, 메시지 입력 기능, 전역상태 관리</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://github.com/crucial-sub"
+><img
+src="https://avatars.githubusercontent.com/crucial-sub"
+width="100px;"
+alt=""
+/></a>
+</td>
+<td><b>박중섭</b></td>
+  <td><a href="https://github.com/crucial-sub" >crucial-sub</a></td>
+<td>메시지 삭제 기능, 메인 페이지 해더 및 좌측네브바</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://github.com/ttaerrim"
+><img
+src="https://avatars.githubusercontent.com/ttaerrim"
+width="100px;"
+alt=""
+/></a
+></td>
+<td align="center"><sub><b>이태림</b></sub></td>
+  <td><a href="https://github.com/ttaerrim" >ttaerrim</a></td>
+<td>메시지 답장 기능, 전역 상태 관리</td>
+</tr>
+
+<tr>
+<td align="center">
+<a href="https://github.com/penguin311"
+><img
+src="https://avatars.githubusercontent.com/penguin311"
+width="100px;"
+alt=""
+/><br /><sub><b>임수영</b></sub></a
+></td>
+<td>임수영</td>
+<td><a href="https://github.com/penguin311" >penguin311</a></td>
+<td>로그인&아웃, 유저 모델, 메인 페이지 스타일링</td>
+</tr>
+</tbody>
+</table>  
+  
+<!--   
   <tr>
         </td>
       <td align="center">
@@ -52,7 +121,7 @@
         /><br /><sub><b>임수영</b></sub></a
       ><br />
   </tr>
-</table>
+</table> -->
 
 |  이름  |                       Github                        | 담당 기능         |
 | :----: | :-------------------------------------------------: | :---------------- |
