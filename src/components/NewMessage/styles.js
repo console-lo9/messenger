@@ -30,7 +30,6 @@ export const UserInput = styled.textarea`
         props.scrollHeight > 48 ? props.scrollHeight + 'px' : 48 + 'px'};
     line-height: 24px;
     max-height: 230px;
-
     border: {
         1px solid ${COLOR.INPUT_LIGHTGRAY};
         radius: 2px;
@@ -44,7 +43,6 @@ export const UserInput = styled.textarea`
     :hover {
         border: 1px solid ${COLOR.HOVER_LIGHTGRAY};
     }
-
     :focus {
         border: 1px solid ${COLOR.FOCUS_GRAY};
         outline: none;
