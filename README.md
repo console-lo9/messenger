@@ -1,6 +1,6 @@
 <h1 align="center"> 메신저 과제 </h1>
 
-<h3 align="center"> 서비스 링크: https://console-lo9-messenger.herokuapp.com</h3>
+<h3 align="center"> 서비스 링크: https://fervent-tereshkova-9b041a.netlify.app/</h3>
 
 <p align="center"><img width="800" src="https://user-images.githubusercontent.com/93258739/153689576-dd79fe3d-2f67-4657-848e-937f8c231880.jpg" /></p>
 
@@ -54,15 +54,14 @@
   </tr>
 </table>
 
-|  이름  |                       Github                        | 담당 기능         |
-| :----: | :-------------------------------------------------: | :---------------- |
+|  이름  |                       Github                        | 담당 기능                                                |
+| :----: | :-------------------------------------------------: | :------------------------------------------------------- |
 | 우종원 | [Ubermensch0608](https://github.com/Ubermensch0608) | 메시지 데이터 동적 관리, 메시지 입력 기능, 전역상태 관리 |
-| 박중섭 |    [crucial-sub](https://github.com/crucial-sub)    | 메시지 삭제 기능, 메인 페이지 해더 및 좌측네브 |
-| 이태림 |       [ttaerrim](https://github.com/ttaerrim)       | 메시지 답장 기능, 전역 상태 관리 |
-| 임수영 |     [penguin311](https://github.com/penguin311)     | 로그인&아웃, 유저 모델, 메인 페이지 스타일링 |
+| 박중섭 |    [crucial-sub](https://github.com/crucial-sub)    | 메시지 삭제 기능, 메인 페이지 해더 및 좌측네브           |
+| 이태림 |       [ttaerrim](https://github.com/ttaerrim)       | 메시지 답장 기능, 전역 상태 관리                         |
+| 임수영 |     [penguin311](https://github.com/penguin311)     | 로그인&아웃, 유저 모델, 메인 페이지 스타일링             |
 
 <br/>
-
 
 ## ⚙ 설치
 
@@ -162,18 +161,18 @@ $ npm start || yarn start
 
 <br/>
 
-
 ## 🗺 한 눈으로 보는 구현 기능
+
 1. 로그인 및 사용자 인식 기능
-<img src='https://user-images.githubusercontent.com/93258739/153690714-76369c95-2cd7-481a-9389-a3e0f5f3b674.gif' alt="gif" />
+   <img src='https://user-images.githubusercontent.com/93258739/153690714-76369c95-2cd7-481a-9389-a3e0f5f3b674.gif' alt="gif" />
 
 2. 메세지 답장 기능
-<img src='https://user-images.githubusercontent.com/93258739/153690928-27c0cc72-14f5-41ee-9dd6-217544ceabb0.gif' alt="gif" />
+   <img src='https://user-images.githubusercontent.com/93258739/153690928-27c0cc72-14f5-41ee-9dd6-217544ceabb0.gif' alt="gif" />
 
-3. 메세지 삭제 기능 
-<img src='https://user-images.githubusercontent.com/93258739/153691138-ae9da50d-ad2b-46bb-afdd-efe0debc3717.gif' alt="gif" />
+3. 메세지 삭제 기능
+   <img src='https://user-images.githubusercontent.com/93258739/153691138-ae9da50d-ad2b-46bb-afdd-efe0debc3717.gif' alt="gif" />
 
-> 
+>
 
 ## 🚀 스택
 
@@ -192,10 +191,9 @@ $ npm start || yarn start
 
 이번 프로젝트에서 느낀 점은 크게 두 가지입니다.😊
 
-첫째, **개인의 효율성과 생산성**을 높인 것입니다. 기능 구현에서 막히는 부분은 서칭을 통해 학습, 새로운 기술의 적용은 효율성과 생산성을 높여 목표 완수에 필요한 시간을 크게 단축시켰습니다.  
+첫째, **개인의 효율성과 생산성**을 높인 것입니다. 기능 구현에서 막히는 부분은 서칭을 통해 학습, 새로운 기술의 적용은 효율성과 생산성을 높여 목표 완수에 필요한 시간을 크게 단축시켰습니다.
 
 둘째, **좋은 협업**이 무엇인지 느꼈습니다. 최신 이슈를 공유하는 등 소통을 기본으로 하여 효율적인 업무 분담에 성공했습니다. 또, 혼자서는 해결하기 힘들었던 기능 및 오류를 팀원끼리 합심해 해결해나갔던 경험을 통해 팀플레이, 그리고 좋은 협업이란 무엇인지를 느낄 수 있었습니다.
-
 
 ### **박중섭** ✨
 
