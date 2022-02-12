@@ -14,6 +14,7 @@ export const SectionRightWrapper = styled.div`
 `;
 
 export const MainWrapper = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     position: relative;

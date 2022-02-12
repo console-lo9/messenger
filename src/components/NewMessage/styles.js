@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { COLOR } from 'utils/constants/styles';
 export const UserFormBox = styled.div`
     position: relative;
+    bottom: 0;
     display: flex;
     width: 97%;
     height: auto;
@@ -21,7 +22,7 @@ export const UserForm = styled.form`
 `;
 
 export const UserInput = styled.textarea`
-    position: absolute;
+    position: relative;
     bottom: 0;
     padding: 10px;
     width: 100%;
@@ -55,8 +56,8 @@ export const SendButton = styled(Button)`
     position: absolute;
     right: 0px;
     bottom: 0px;
-    margin-right: 0.5rem;
-    margin-bottom: 0.3rem;
+    margin-right: 4px;
+    margin-bottom: 4px;
     background-color: ${({ isTyping }) =>
         isTyping ? COLOR.BUTTON_BLUE : COLOR.INPUT_LIGHTGRAY};
     color: ${COLOR.WHITE};
