@@ -1,17 +1,20 @@
 import styled from 'styled-components';
-// Messages  - index.js
+import { COLOR } from 'utils/constants/styles';
 
+// Messages  - index.js
 export const StyledMessages = styled.ul`
+    padding-top: 20px;
     width: 100%;
     height: 90%;
     overflow: auto;
-    background-color: #f8f8f8;
+    background-color: ${COLOR.BACK_GROUND_GREY};
     flex: 1 1 0;
 `;
 
 export const MessageDiv = styled.div`
+    margin-bottom: 10px;
     position: relative;
-    background-color: #f1f1f1;
+    background-color: ${COLOR.DARKER_GREY};
     &:hover {
         .button_box {
             display: block;
@@ -26,14 +29,6 @@ export const ButtonBox = styled.div`
     right: 3%;
     transform: translateY(-60%);
     justify-content: center;
-
-    & > input[type='button'] {
-        background-color: aliceblue;
-        width: 50px;
-        height: 30px;
-        border: none;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
-    }
 `;
 
 // Message - Message.jsx
@@ -44,9 +39,9 @@ export const UserMsg = styled.li`
     padding: 4px 20px;
     width: 100%;
     min-height: 28px;
-    background: rgb(248, 248, 248);
+    background: ${COLOR.BACK_GROUND_GREY};
     :hover {
-        background: rgb(240, 240, 240);
+        background: ${COLOR.LIGHTER_GREY};
     }
 `;
 
@@ -65,9 +60,20 @@ export const ProfileImage = styled.img`
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
 `;
 
+export const UserInfoDiv = styled.div`
+    display: flex;
+    align-items: center;
+`;
 export const UserName = styled.span`
     font-weight: 700;
     margin-right: 10px;
+    cursor: pointer;
+`;
+
+export const DateSpan = styled.span`
+    color: ${COLOR.FOCUS_GRAY};
+    font-size: 12px;
 `;

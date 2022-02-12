@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
-
+import { COLOR } from 'utils/constants/styles';
 const Button = ({ children, id, color, size, ...rest }) => {
     return (
         <StyledButton type="button" id={id} color={color} size={size} {...rest}>
@@ -11,8 +11,8 @@ const Button = ({ children, id, color, size, ...rest }) => {
 
 const sizes = {
     mediumSquare: {
-        height: '2.25rem',
-        width: '2.25rem',
+        height: '40px',
+        width: '40px',
         fontSize: '1rem',
     },
     smallSquare: {
@@ -85,7 +85,7 @@ const StyledButton = styled.button`
     }
 `;
 Button.defaultProps = {
-    color: '#ffffff',
+    color: COLOR.WHITE,
     size: 'smallSquare',
 };
 
