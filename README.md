@@ -13,6 +13,8 @@
 
 ## 🙋‍♀️🙋‍♂️ 팀원
 
+<<<<<<< HEAD
+
 <table>
   <tr>
         </td>
@@ -63,6 +65,82 @@
 
 <br/>
 
+=======
+<br/>
+
+<table>
+<thead>
+<tr>
+<th>프로필</th>
+<th>이름</th>
+<th>Github</th>
+<th>담당 기능</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/Ubermensch0608"
+><img
+src="https://avatars.githubusercontent.com/Ubermensch0608"
+width="100px;"
+alt=""
+/></a>
+</td>
+<td><b>우종원</b></sub></td>
+<td align="center"><a href="https://github.com/Ubermensch0608" >Ubermensch0608</a></td>
+<td>메시지 데이터 동적 관리, 메시지 입력 기능, 전역상태 관리</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://github.com/crucial-sub"
+><img
+src="https://avatars.githubusercontent.com/crucial-sub"
+width="100px;"
+alt=""
+/></a>
+</td>
+<td><b>박중섭</b></td>
+  <td align="center"><a href="https://github.com/crucial-sub" >crucial-sub</a></td>
+<td>메시지 삭제 기능, 메인 페이지 해더 및 좌측네브바</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://github.com/ttaerrim"
+><img
+src="https://avatars.githubusercontent.com/ttaerrim"
+width="100px;"
+alt=""
+/></a
+></td>
+<td align="center"><b>이태림</b></td>
+  <td align="center"><a href="https://github.com/ttaerrim" >ttaerrim</a></td>
+<td>메시지 답장 기능, 전역 상태 관리</td>
+</tr>
+
+<tr>
+<td align="center">
+<a href="https://github.com/penguin311"
+><img
+src="https://avatars.githubusercontent.com/penguin311"
+width="100px;"
+alt=""
+/><br /></a
+></td>
+<td><b>임수영</b></td>
+<td align="center"><a href="https://github.com/penguin311" >penguin311</a></td>
+<td>로그인&아웃, 유저 모델, 메인 페이지 스타일링</td>
+</tr>
+</tbody>
+</table>
+
+<br/><br/>
+
+> > > > > > > 949537b4eaa0b993b70c9276b4918c93a6fc464d
+
 ## ⚙ 설치
 
 ```
@@ -74,7 +152,7 @@ $ cd messenger
 $ npm ci || yarn
 
 # start
-$ npm start || yarn start
+$ npm run start:dev || yarn start:dev
 
 ⠀
 ⠀  You can now view this project in the browser.
@@ -93,6 +171,7 @@ $ npm start || yarn start
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
     "json-server": "^0.17.0",
     "nanoid": "^3.2.0",
     "polished": "^4.1.4",
@@ -112,13 +191,16 @@ $ npm start || yarn start
 ## 📂 파일 구조
 
     ├── public
+    ├── server
     └── src
         ├── assets
         ├── components
+        │   ├── Header
         │   ├── Login
         │   ├── Messages
         │   ├── Modal
-        │   └── NewMessage
+        │   ├── NewMessage
+        │   └── SideNav
         ├── hooks
         ├── layout
         ├── models
@@ -127,6 +209,7 @@ $ npm start || yarn start
         │   ├── action
         │   └── reducer
         └── utils
+        │   └── constants
         ├── App.js
         ├── GlobalStyle.js
         └── index.js
@@ -164,13 +247,16 @@ $ npm start || yarn start
 ## 🗺 한 눈으로 보는 구현 기능
 
 1. 로그인 및 사용자 인식 기능
-   <img src='https://user-images.githubusercontent.com/93258739/153690714-76369c95-2cd7-481a-9389-a3e0f5f3b674.gif' alt="gif" />
 
-2. 메세지 답장 기능
-   <img src='https://user-images.githubusercontent.com/93258739/153690928-27c0cc72-14f5-41ee-9dd6-217544ceabb0.gif' alt="gif" />
+ <img src='https://user-images.githubusercontent.com/93258739/153690714-76369c95-2cd7-481a-9389-a3e0f5f3b674.gif' alt="gif" />
 
-3. 메세지 삭제 기능
-   <img src='https://user-images.githubusercontent.com/93258739/153691138-ae9da50d-ad2b-46bb-afdd-efe0debc3717.gif' alt="gif" />
+2. 메시지 답장 기능
+
+ <img src='https://user-images.githubusercontent.com/93258739/153690928-27c0cc72-14f5-41ee-9dd6-217544ceabb0.gif' alt="gif" />
+
+3. 메시지 삭제 기능
+
+ <img src='https://user-images.githubusercontent.com/93258739/153691138-ae9da50d-ad2b-46bb-afdd-efe0debc3717.gif' alt="gif" />
 
 >
 
@@ -178,10 +264,7 @@ $ npm start || yarn start
 
 <br/>
 
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-<img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black">
-<img src="https://img.shields.io/badge/styled-compontents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/styled-compontents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
 
 <br/><br/>
 
@@ -198,5 +281,7 @@ $ npm start || yarn start
 ### **박중섭** ✨
 
 ### **이태림** 🐯
+
+리덕스를 프로젝트에 도입해 이론이 아닌 실전 경험으로 직접 사용 방법을 더 빠르게 익힐 수 있었습니다. 사용해 보니 props drilling이 생길 경우에는 확실히 state를 props로 전달하는 방식보다 리덕스로 상태 관리를 하는 게 효율적이라는 걸 느꼈습니다. 리덕스 미들웨어, 툴킷 외에도 `MobX` `Recoil` 등 다른 상태 관리 라이브러리도 사용해 보고 싶습니다.
 
 ### **임수영** 🐧

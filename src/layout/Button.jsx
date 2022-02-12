@@ -11,8 +11,8 @@ const Button = ({ children, id, color, size, ...rest }) => {
 
 const sizes = {
     mediumSquare: {
-        height: '2.25rem',
-        width: '2.25rem',
+        height: '40px',
+        width: '40px',
         fontSize: '1rem',
     },
     smallSquare: {
