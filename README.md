@@ -1,6 +1,6 @@
 <h1 align="center"> 메신저 과제 </h1>
 
-<h3 align="center"> 서비스 링크: https://console-lo9-messenger.herokuapp.com/</h3>
+<h3 align="center"> 서비스 링크: https://console-lo9-messenger.herokuapp.com</h3>
 
 <p align="center"><img width="800" src="https://user-images.githubusercontent.com/93258739/153689576-dd79fe3d-2f67-4657-848e-937f8c231880.jpg" /></p>
 
@@ -9,137 +9,80 @@
 > json-server 로 만든 가상의 서버에서 대화 목록을 가져와 대화 목록을 화면에 출력한 후
 > 대화에 참여한 사용자가 메시지를 전송할 수 있도록 하는 페이지 제작.
 
-<br/><br/>
+<br/>
 
 ## 🙋‍♀️🙋‍♂️ 팀원
-
-<<<<<<< HEAD
-
-<table>
-  <tr>
-        </td>
-      <td align="center">
-      <a href="https://github.com/Ubermensch0608"
-        ><img
-          src="https://avatars.githubusercontent.com/Ubermensch0608"
-          width="100px;"
-          alt=""
-        /><br /><sub><b>우종원</b></sub></a>
-    <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/crucial-sub"
-        ><img
-          src="https://avatars.githubusercontent.com/crucial-sub"
-          width="100px;"
-          alt=""
-        /><br /><sub><b>박중섭</b></sub></a
-      ><br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/ttaerrim"
-        ><img
-          src="https://avatars.githubusercontent.com/ttaerrim"
-          width="100px;"
-          alt=""
-        /><br /><sub><b>이태림</b></sub></a
-      ><br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/penguin311"
-        ><img
-          src="https://avatars.githubusercontent.com/penguin311"
-          width="100px;"
-          alt=""
-        /><br /><sub><b>임수영</b></sub></a
-      ><br />
-  </tr>
-</table>
-
-|  이름  |                       Github                        | 담당 기능                                                |
-| :----: | :-------------------------------------------------: | :------------------------------------------------------- |
-| 우종원 | [Ubermensch0608](https://github.com/Ubermensch0608) | 메시지 데이터 동적 관리, 메시지 입력 기능, 전역상태 관리 |
-| 박중섭 |    [crucial-sub](https://github.com/crucial-sub)    | 메시지 삭제 기능, 메인 페이지 해더 및 좌측네브           |
-| 이태림 |       [ttaerrim](https://github.com/ttaerrim)       | 메시지 답장 기능, 전역 상태 관리                         |
-| 임수영 |     [penguin311](https://github.com/penguin311)     | 로그인&아웃, 유저 모델, 메인 페이지 스타일링             |
-
-<br/>
-
-=======
-<br/>
 
 <table>
 <thead>
 <tr>
-<th>프로필</th>
-<th>이름</th>
-<th>Github</th>
-<th>담당 기능</th>
+<th><p align="center">프로필</p></th>
+<th><p>이름</p></th>
+<th><p>담당 기능</p></th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/Ubermensch0608"
-><img
+<img
 src="https://avatars.githubusercontent.com/Ubermensch0608"
 width="100px;"
 alt=""
-/></a>
+/>
 </td>
-<td><b>우종원</b></sub></td>
-<td align="center"><a href="https://github.com/Ubermensch0608" >Ubermensch0608</a></td>
+<td><b><a href="https://github.com/Ubermensch0608"
+>우종원</a></b></sub></td>
 <td>메시지 데이터 동적 관리, 메시지 입력 기능, 전역상태 관리</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://github.com/crucial-sub"
-><img
+<img
 src="https://avatars.githubusercontent.com/crucial-sub"
 width="100px;"
 alt=""
-/></a>
+/>
 </td>
-<td><b>박중섭</b></td>
-  <td align="center"><a href="https://github.com/crucial-sub" >crucial-sub</a></td>
+<td><b><a href="https://github.com/crucial-sub"
+>박중섭</a></b>
 <td>메시지 삭제 기능, 메인 페이지 해더 및 좌측네브바</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://github.com/ttaerrim"
-><img
+<img
 src="https://avatars.githubusercontent.com/ttaerrim"
 width="100px;"
 alt=""
-/></a
-></td>
-<td align="center"><b>이태림</b></td>
-  <td align="center"><a href="https://github.com/ttaerrim" >ttaerrim</a></td>
+/></td>
+<td><a href="https://github.com/ttaerrim" >이태림</a></td>
 <td>메시지 답장 기능, 전역 상태 관리</td>
 </tr>
 
 <tr>
 <td align="center">
-<a href="https://github.com/penguin311"
-><img
+<img
 src="https://avatars.githubusercontent.com/penguin311"
 width="100px;"
 alt=""
-/><br /></a
-></td>
-<td><b>임수영</b></td>
-<td align="center"><a href="https://github.com/penguin311" >penguin311</a></td>
+/><br /></td>
+<td><b><a href="https://github.com/penguin311"
+>임수영</a></b></td>
 <td>로그인&아웃, 유저 모델, 메인 페이지 스타일링</td>
 </tr>
 </tbody>
 </table>
 
-<br/><br/>
+<br/>
 
-> > > > > > > 949537b4eaa0b993b70c9276b4918c93a6fc464d
+## 🚀 스택
+
+<br/>
+
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/styled-compontents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+
+<br/>
 
 ## ⚙ 설치
 
@@ -258,15 +201,7 @@ $ npm run start:dev || yarn start:dev
 
  <img src='https://user-images.githubusercontent.com/93258739/153691138-ae9da50d-ad2b-46bb-afdd-efe0debc3717.gif' alt="gif" />
 
->
-
-## 🚀 스택
-
-<br/>
-
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/styled-compontents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
-
-<br/><br/>
+> <br/>
 
 ## 💡 과제 후기
 
@@ -280,6 +215,8 @@ $ npm run start:dev || yarn start:dev
 
 ### **박중섭** ✨
 
+이번 프로젝트를 전역상태를 Redux로 관리하는 방식에 대해 배울 수 있었습니다. 최상단에서 state를 props로 전달하는 기존의 방식에서 캄포넌트간의 연결이 많아질수록 상태 관리가 힘들어지는 문제점을 Redux에선 state를 store 한 곳에 모아서 관리하다보니 프로젝트가 커질수록 매우 효율적일 것이라는 느낌을 받았습니다.
+
 ### **이태림** 🐯
 
 리덕스를 프로젝트에 도입해 이론이 아닌 실전 경험으로 직접 사용 방법을 더 빠르게 익힐 수 있었습니다. 사용해 보니 props drilling이 생길 경우에는 확실히 state를 props로 전달하는 방식보다 리덕스로 상태 관리를 하는 게 효율적이라는 걸 느꼈습니다. 리덕스 미들웨어, 툴킷 외에도 `MobX` `Recoil` 등 다른 상태 관리 라이브러리도 사용해 보고 싶습니다.
@@ -288,9 +225,8 @@ $ npm run start:dev || yarn start:dev
 
 이번 프로젝트에서 배운점은 크게 세 가지입니다.
 
-첫째는, **협업을 위한 팀 컨벤션 확립입니다.** 그동안 과제를 진행하면서 팀원들과 서로 달랐던 코딩 스타일, 폴더 구조 스타일, 깃 커밋, 깃 브랜치 전략 등을 지속적으로 협의를 통해 하나의 컨벤션을 만들어 나갔는데, 특히 이번 과제에서 저희 팀만의 규칙들을 명확하게 확립하고 발전시킬 수 있었던 것 같습니다.
+첫째는, 협업을 위한 팀 컨벤션 확립입니다. 그동안 과제를 진행하면서 팀원들과 서로 달랐던 코딩 스타일, 폴더 구조 스타일, 깃 커밋, 깃 브랜치 전략 등을 지속적으로 협의를 통해 하나의 컨벤션을 만들어 나갔는데, 특히 이번 과제에서 저희 팀만의 규칙들을 명확하게 확립하고 발전시킬 수 있었던 것 같습니다.
 
-두번째는, **리팩토링의 중요성**이었습니다. 하나의 컴포넌트 스타일을 프로젝트 내에서 최대한 재사용할 수있도록 스타일드 컴포넌트를 리팩토링하고 상수화 시킴으로서 깔끔하고 통일된 코드 구조를 어떻게 만들 수있는지를 배울 수있었습니다. 
+두번째는, 리팩토링의 중요성이었습니다. 하나의 컴포넌트 스타일을 프로젝트 내에서 최대한 재사용할 수있도록 스타일드 컴포넌트를 리팩토링하고 상수화 시킴으로서 깔끔하고 통일된 코드 구조를 어떻게 만들 수있는지를 배울 수있었습니다.
 
-세번째는 **리덕스의 활용법**이었는데, 리덕스를 통한 상태관리를 프로젝트에 적용해볼 수 있어 좋았습니다. 다음에는 리덕스 툴킷또한 사용해보고싶습니다. 
- 
+세번째는 리덕스의 활용법이었는데, 리덕스를 통한 상태관리를 프로젝트에 적용해볼 수 있어 좋았습니다. 다음에는 리덕스 툴킷또한 사용해보고싶습니다.
