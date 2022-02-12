@@ -4,19 +4,21 @@ import styled from 'styled-components';
 
 export const DarkBackground = styled.div`
     position: fixed;
-    left: 0;
     top: 0;
-    display: flex;
-    height: 100%;
+    left: 0;
     width: 100%;
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
+    z-index: 10;
     background: rgba(0, 0, 0, 0.8);
 `;
 
 export const DialogBlock = styled.div`
-    position: relative;
-    width: 600px;
+    position: fixed;
+    top: 37vh;
+    left: 31%;
+    width: 39%;
+    z-index: 100;
+    overflow: hidden;
     background: white;
     border-radius: 4px;
     h3 {

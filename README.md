@@ -1,6 +1,6 @@
 <h1 align="center"> 메신저 과제 </h1>
 
-<h3 align="center"> 서비스 링크: https://console-lo9-messenger.herokuapp.com</h3>
+<h3 align="center"> 서비스 링크: https://fervent-tereshkova-9b041a.netlify.app/</h3>
 
 <p align="center"><img width="800" src="https://user-images.githubusercontent.com/93258739/153689576-dd79fe3d-2f67-4657-848e-937f8c231880.jpg" /></p>
 
@@ -12,6 +12,60 @@
 <br/><br/>
 
 ## 🙋‍♀️🙋‍♂️ 팀원
+
+<<<<<<< HEAD
+
+<table>
+  <tr>
+        </td>
+      <td align="center">
+      <a href="https://github.com/Ubermensch0608"
+        ><img
+          src="https://avatars.githubusercontent.com/Ubermensch0608"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>우종원</b></sub></a>
+    <br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/crucial-sub"
+        ><img
+          src="https://avatars.githubusercontent.com/crucial-sub"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>박중섭</b></sub></a
+      ><br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/ttaerrim"
+        ><img
+          src="https://avatars.githubusercontent.com/ttaerrim"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>이태림</b></sub></a
+      ><br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/penguin311"
+        ><img
+          src="https://avatars.githubusercontent.com/penguin311"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>임수영</b></sub></a
+      ><br />
+  </tr>
+</table>
+
+|  이름  |                       Github                        | 담당 기능                                                |
+| :----: | :-------------------------------------------------: | :------------------------------------------------------- |
+| 우종원 | [Ubermensch0608](https://github.com/Ubermensch0608) | 메시지 데이터 동적 관리, 메시지 입력 기능, 전역상태 관리 |
+| 박중섭 |    [crucial-sub](https://github.com/crucial-sub)    | 메시지 삭제 기능, 메인 페이지 해더 및 좌측네브           |
+| 이태림 |       [ttaerrim](https://github.com/ttaerrim)       | 메시지 답장 기능, 전역 상태 관리                         |
+| 임수영 |     [penguin311](https://github.com/penguin311)     | 로그인&아웃, 유저 모델, 메인 페이지 스타일링             |
+
+<br/>
+
+=======
 <br/>
 
 <table>
@@ -81,9 +135,12 @@ alt=""
 <td>로그인&아웃, 유저 모델, 메인 페이지 스타일링</td>
 </tr>
 </tbody>
-</table>  
+</table>
 
 <br/><br/>
+
+> > > > > > > 949537b4eaa0b993b70c9276b4918c93a6fc464d
+
 ## ⚙ 설치
 
 ```
