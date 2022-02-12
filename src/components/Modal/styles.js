@@ -31,10 +31,8 @@ export const ModalHeader = styled.div`
     padding: 20px;
 `;
 export const Title = styled.h2`
-    font: {
-        size: 26px;
-        weight: bold;
-    }
+    font-size: 26px;
+    font-weight: bold;
 `;
 export const ModalContents = styled.div`
     padding: 0px 20px;

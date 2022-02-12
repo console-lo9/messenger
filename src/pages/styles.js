@@ -41,10 +41,8 @@ export const ChannelHeader = styled.div`
     min-height: 60px;
     border-bottom: 1px solid ${COLOR.LINE_GREY};
     background-color: ${COLOR.WHITE};
-    font: {
-        weight: 700;
-        size: 16px;
-    }
+    font-weight: 700;
+    font-size: 16px;
 `;
 
 export const StarIcon = styled.img`

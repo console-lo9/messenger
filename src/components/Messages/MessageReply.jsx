@@ -1,8 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { replyInput } from 'store/action/input.js';
+
+import { MdReply } from 'react-icons/md';
 import styled from 'styled-components';
+import Button from 'layout/Button';
+import { COLOR } from 'utils/constants/styles';
 
 const MessageReply = ({ id }) => {
     const dispatch = useDispatch();
@@ -16,12 +20,15 @@ const MessageReply = ({ id }) => {
         dispatch(replyInput(input));
     };
     return (
-        <ReplyBtn type="button" value="답장" id={id} onClick={handleReply} />
+        <ReplyBtn type="button" value="답장" id={id} onClick={handleReply}>
+            <MdReply />
+        </ReplyBtn>
     );
 };
 
-const ReplyBtn = styled.input`
+const ReplyBtn = styled(Button)`
     margin-right: 5px;
+    color: ${COLOR.HOVER_LIGHTGRAY};
 `;
 
 export default MessageReply;

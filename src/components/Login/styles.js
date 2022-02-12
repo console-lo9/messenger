@@ -46,8 +46,9 @@ export const Label = styled.h1``;
 export const Input = styled.input`
     display: block;
     width: 50%;
+    height: 50px;
     font-size: 18px;
-    padding: 10px;
+    padding-left: 20px;
     margin: 50px auto;
     border: none;
     border-radius: 3px;

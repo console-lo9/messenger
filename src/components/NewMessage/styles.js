@@ -55,21 +55,19 @@ export const SendButton = styled(Button)`
     position: absolute;
     right: 0px;
     bottom: 0px;
-    margin: {
-        right: 0.5rem
-        bottom: 0.3rem
-    };
+    margin-right: 0.5rem;
+    margin-bottom: 0.3rem;
     background-color: ${({ isTyping }) =>
         isTyping ? COLOR.BUTTON_BLUE : COLOR.INPUT_LIGHTGRAY};
-        color: ${COLOR.WHITE};
-        ${({ isTyping }) => {
-            if (!isTyping) {
-                return css`
-                    &:hover {
-                        background-color: ${COLOR.INPUT_LIGHTGRAY};
-                    }
-                `;
-            }
-        }}
+    color: ${COLOR.WHITE};
+    ${({ isTyping }) => {
+        if (!isTyping) {
+            return css`
+                &:hover {
+                    background-color: ${COLOR.INPUT_LIGHTGRAY};
+                }
+            `;
+        }
+    }}
     cursor: pointer;
-    `;
+`;

@@ -21,10 +21,8 @@ export const SummaryBtn = styled.button`
     background: none;
     box-sizing: border-box;
     text-decoration: none;
-    border:{
-        0;
-        radius: 4px;
-    }
+    border: 0;
+    border-radius: 4px;
     cursor: pointer;
     &:hover {
         background-color: ${COLOR.HOVER_GRAY};

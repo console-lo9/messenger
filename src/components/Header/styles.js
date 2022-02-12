@@ -50,7 +50,7 @@ export const Logo = styled.span`
 
 export const Welcome = styled.div`
     margin-left: 15px;
-    font-size: 12px;
+    font-size: 13px;
 `;
 
 export const UnderLineMenu = styled.span`
