@@ -1,15 +1,6 @@
 import { createStore } from 'redux';
+import rootReducer from 'store/reducer';
 
-const todoReducer = (state, action) => {
-    if (action.type === 'remove') {
-        return {
-            todoId: action.id,
-        };
-    }
-
-    return state;
-};
-
-const store = createStore(todoReducer);
+const store = createStore(rootReducer);
 
 export default store;

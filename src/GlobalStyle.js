@@ -55,6 +55,10 @@ body {
   margin: 0;
   background-color: #fff;
   color: #222;
+  height: 100vh;
+}
+#root {
+  height: 100%;
 }
 `;
 
