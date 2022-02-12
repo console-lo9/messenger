@@ -14,11 +14,18 @@ const Login = () => {
     const [userName, setUserName] = useState('');
 
     const userNameHandler = (e) => {
-        setUserName(e.target.value);
+        const currUserNameValue = e.target.value;
+
+        setUserName(currUserNameValue);
     };
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
+
+        if (userName.trim().length === 0) {
+            return alert('이름을 한 글자 이상 입력해주세요!');
+        }
+
         localStorage.setItem('userName', userName);
         dispatch(login(userName));
         navigate('/main');
@@ -31,7 +38,7 @@ const Login = () => {
             </S.Header>
             <S.SubtminContainer>
                 <S.SubmitForm onSubmit={onSubmitHandler}>
-                    <S.Label>Join ! </S.Label>
+                    <S.Label>Join Your Team !</S.Label>
                     <S.Input
                         placeholder="이름을 입력해주세요"
                         value={userName}

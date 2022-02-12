@@ -1,14 +1,16 @@
 import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
+
+import Modal from 'components/Modal';
 import Messages from 'components/Messages';
 import NewMessage from 'components/NewMessage/NewMessage';
-import arrowDown from 'assets/arrow-down.png';
+import Header from 'components/Header/index';
+import SideNav from 'components/SideNav/index';
+
 import star from 'assets/star-btn.png';
-import styled from 'styled-components';
-import Modal from 'components/Modal';
-import Header from 'components/Header';
-import SideNav from 'components/SideNav';
+import arrowDown from 'assets/arrow-down.png';
 import * as S from './styles';
+
 const Main = () => {
     const MsgBoxRef = useRef();
     const modal = useSelector((state) => state.modal);

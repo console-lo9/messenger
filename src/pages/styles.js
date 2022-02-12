@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { COLOR } from 'utils/constants/styles';
 
 export const MainContainer = styled.div`
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 `;
 
 export const SectionRightWrapper = styled.div`
@@ -16,11 +16,11 @@ export const SectionRightWrapper = styled.div`
 export const MainWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: flex-start;
+    flex: 4 0 0;
     width: 100%;
     height: auto;
-    flex: 4 0 0;
-    position: relative;
     background-color: ${COLOR.BACK_GROUND_GREY};
 
     & > div:nth-child(1) {
@@ -35,11 +35,11 @@ export const MainWrapper = styled.div`
 `;
 
 export const ChannelHeader = styled.div`
+    display: flex;
+    align-items: center;
     width: inherit;
     min-height: 60px;
     border-bottom: 1px solid ${COLOR.LINE_GREY};
-    display: flex;
-    align-items: center;
     background-color: ${COLOR.WHITE};
     font-weight: 700;
     font-size: 16px;

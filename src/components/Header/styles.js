@@ -41,13 +41,16 @@ export const Logo = styled.span`
     text-align: center;
     line-height: 22px;
     margin-right: 5px;
-    font-size: 0.7rem;
-    font-weight: 500;
+
+    font: {
+        size: 0.7rem;
+        weight: 500;
+    }
 `;
 
 export const Welcome = styled.div`
     margin-left: 15px;
-    font-size: 12px;
+    font-size: 13px;
 `;
 
 export const UnderLineMenu = styled.span`
