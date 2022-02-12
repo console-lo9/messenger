@@ -8,6 +8,7 @@
         "@testing-library/react": "^12.1.2",
         "@testing-library/user-event": "^13.5.0",
         "concurrently": "^7.0.0",
+        "cross-env": "^7.0.3",
         "json-server": "^0.17.0",
         "nanoid": "^3.2.0",
         "polished": "^4.1.4",
@@ -21,12 +22,12 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
+        "start": "node server",
+        "start:dev": "cross-env NODE_PATH=src react-scripts start",
+        "build": "cross-env NODE_PATH=src react-scripts build",
+        "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-        "mockserver": "json-server ./src/utils/data.json --port 4000",
-        "dev": "concurrently \"npm start\" \"npm run mockserver\""
+        "heroku-postbuild": "cross-env NODE_PATH=src npm run build"
     },
     "eslintConfig": {
         "extends": [
