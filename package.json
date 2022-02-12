@@ -49,5 +49,6 @@
     },
     "devDependencies": {
         "@svgr/webpack": "^6.2.1"
-    }
+    },
+    "proxy": "https://console-lo9-messenger.herokuapp.com/"
 }
